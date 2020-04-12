@@ -1,0 +1,36 @@
+
+<!-- Header -->
+<div class="d-flex flex-row-reverse justify-content-center">
+  <div class="p-2 justify-content-start"><img src="./../../assets/images/icons/logo.jpg" alt=""></div>
+  <div class="p-2 justify-content-center">Welcome to J.</div>
+  <div class="p-2 bd-highlight">SIGN IN</div>
+  <div class="p-2 bd-highlight">Flex item 3</div>
+  <div class="p-2 bd-highlight">
+    <ul (mouseenter)=" mouseEnterCat()">Women
+     
+    </ul>
+  </div>
+  <div class="p-2 bd-highlight">
+    <ul (mouseenter)=" mouseEnterCat()">
+    <li>
+      Men
+      <div class="menu-show">
+        <div class="menu-inner">
+            <div class="list-menu">
+                <ul class="">
+                    <li class="sub-hover" *ngFor="let cat of categories; let ind=index ">
+                        <a >
+                             {{cat}}  
+                          <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </li>
+    
+  </ul></div>
+  <div class="p-2 bd-highlight"><i class="fa-shopping-cart"></i></div>
+</div>
+<!-- <Header End> -->
