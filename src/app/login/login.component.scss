@@ -1,0 +1,114 @@
+// .gif{
+//     // min-height: 400px;
+//     background: url(../../../assets/images/icons/new-onen.gif) center/100% no-repeat;
+//     background-size: 100% auto;
+//     margin-top: 67px;
+//     background-position: 0 1px;
+// }
+.container {
+    width: 100%;
+    margin: 45px auto 0;
+    // background: url(../../../assets/images/icons/new-onen.gif) 0 0/95% 100% no-repeat;
+}
+.form-1 {
+    box-shadow: 0 0 10px #ccc;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 60px auto;
+    float: none;
+    max-width: 420px;
+    width: 420px;
+}
+.form-1-header {
+    width: 100%;
+    background: #041e42;
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: -45px;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(0,0,0,.4);
+    text-align: center;
+}
+.form-1-header h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+}
+.form-1-sl{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.form-1-sl> li{
+    list-style: none;
+    margin: 5px 25px;
+    display: inline-block;
+}
+.login-btn{
+    background: #041e42;
+    text-align: center;
+    color: #fff!important;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: .2s;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 14px 26px -12px rgba(0,0,0,.42),0 4px 23px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2)!important;
+    display: block;
+    width: 100%;
+    border: 1px solid #041e42!important;
+    &:hover{
+        background: #fff;
+        border: 1px solid #041e42!important;
+        color: #041e42 !important;
+    } 
+}
+.have-account{
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+    float: left;
+    width: 100%;
+    a{
+        color: #0275d8;
+        font-weight: 600;
+    }
+}
+.terms-cond a{
+    color: #0275d8;
+    font-weight: 400;
+    font-size: 13px;
+}
+.form-1-forgot{
+    color: #007dff!important;
+    font-weight: 600;
+    transition: none;
+    font-size: 15px;
+    text-align: center;
+}
+.mat-form-field{
+    width: 100%;
+}
+.s-toggle{
+    margin-bottom: 20px;
+}
+.form-1-sl{
+    img{
+        cursor: pointer;
+    }
+}
+@media (max-width:550px){
+    .container{
+        width: 95%;
+    }
+}
+.mat-icon{
+    cursor: pointer;
+}

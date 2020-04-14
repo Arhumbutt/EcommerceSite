@@ -1,0 +1,134 @@
+
+  <div class="container-fluid product-container">
+    <div class="product">
+      <div class="side-bar product-sidebar">
+        <button class="closs" (click)="close()">
+            <i class="fa fa-times"></i>
+        </button>
+      
+      <ul>
+      <li>
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="heading-1">
+                <h5 class="mb-0">
+                  <a role="button" data-toggle="collapse" href="#collapse-5" aria-expanded="true" aria-controls="collapse-5">
+                      Shop by Category
+                  </a>
+                </h5>
+              </div>
+              <div id="collapse-5" class="collapse show" data-parent="#accordion" aria-labelledby="heading-1">
+                <div class="card-body">
+                  <ul class=""> 
+                      <li >
+                      </li>
+                      <li>UTVs</li>
+                      <li >Perfumes & Fragrances</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!--/ Panel -->
+        </li>
+      <li>
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="heading-1">
+                <h5 class="mb-0">
+                  <a role="button" data-toggle="collapse" href="#collapse-6" aria-expanded="false" aria-controls="collapse-1">
+                      Shop by Store
+                  </a>
+                </h5>
+              </div>
+              <div id="collapse-6" class="collapse" data-parent="#accordion" aria-labelledby="heading-1">
+                <div class="card-body">
+                  <ul class="">
+                      <li >
+                          </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!--/ Panel -->
+        </li>
+      <li>
+          <!-- <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="heading-1">
+                <h5 class="mb-0">
+                  <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+                    Shop by Type
+                  </a>
+                </h5>
+              </div>
+              <div id="collapse-1" class="collapse" data-parent="#accordion" aria-labelledby="heading-1">
+                <div class="card-body">
+                  <ul class="">
+                      <li *ngFor="let items of producttype">
+                        <a (click)="getFilterTypeList(items.Type)">{{items.Type}}</a>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div> -->
+            <!--/ Panel -->
+        </li>
+      <li>
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="heading-2">
+                <h5 class="mb-0">
+                  <a role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                    Others
+                  </a>
+                </h5>
+              </div>
+              <div id="collapse-2" class="collapse" data-parent="#accordion" aria-labelledby="heading-2">
+                <div class="card-body">
+                  <ul>
+                    <li>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!--/ Panel -->
+        </li>
+      </ul>
+
+      <!-- <p>Price</p> -->
+        <!-- <ul class="check-box-list"> -->
+          <!-- <li>
+              <form id="radio_btn_select">
+                  <div class="d-block">
+                      <input type = "radio" name = "radSize" id = "sizeSmall" value = "small" />
+                      <label for = "sizeSmall"> Under $35.00</label>
+                  </div>
+                  <div class="d-block">
+                      <input type = "radio" name = "radSize" id = "sizeMed" value = "medium" />
+                      <label for = "sizeMed"> Over $35.00</label> 
+                  </div>
+                </form>
+          </li> -->
+          <!-- <li class="price-limit">
+            <span>$</span>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Min Price" [(ngModel)]="minPrice">
+            </mat-form-field>
+            <span>- $</span>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Max Price" [(ngModel)]="maxPrice">
+            </mat-form-field>
+            <button (click)="getFilterCategoryList()">
+                <i class="fa fa-play"></i>
+            </button>
+          </li> -->
+        <!-- </ul> -->
+
+    </div>
+    </div>
+  </div>
