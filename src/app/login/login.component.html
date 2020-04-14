@@ -1,19 +1,12 @@
-<app-header></app-header>
-<div class=" ">
+<!-- <app-header></app-header> -->
+
   <div class="container">
       <div  class="row">
           <div  class="form-1 form-width">
               <div  class="form-1-header">
                   <h1 >Sign In to Your Account</h1>
                   <div class="d-flex">
-                  
                   </div>
-                  <!-- <ul  class="form-1-sl">
-                      <li ><a (click)="facebooklogin()" ><img 
-                                  src="../../../assets/images/icons/icon-facebook.png"></a></li>
-                      <li ><a (click)="googlelogin()"><img 
-                                  src="../../../assets/images/icons/icon-Google.png"></a></li>
-                  </ul> -->
               </div>
               <div  class="form-1-body text-center">
                   <form  role="form"  class="input-forms">
@@ -26,19 +19,11 @@
                           <input required matInput  [(ngModel)]="password"  [type]="hide ? 'password' : 'text'" name="password"  placeholder="Password">
                           <!-- <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
                       </mat-form-field>
-                      <!-- <div class="formrow pull-right">
-                          <div class="form-group">
-                          <app-recapcha></app-recapcha>
-      
-                          </div>
-                      </div> -->
-                      <div class="s-toggle text-left float-left">
-                              <mat-slide-toggle  type="checkbox" checked data-toggle="toggle">Stay Signed In </mat-slide-toggle><br>
-                          <a  class="form-1-forgot" [routerLink]="'/forgetpassword'">Forgot Password?</a>
-                      </div>
+                      
                   <button (click)="onLogin()"   class="login-btn">Sign In</button>
                   </form>
-                  <div  class="have-account">No Account Yet? <a  [routerLink]="'/signup'"
+                  <!-- [routerLink]="'/signup'" -->
+                  <div  class="have-account">No Account Yet? <a 
                       > Sign Up</a></div>
                   <div  class="terms-cond"><a  href="/terms" target="blank">Terms of Use
                       </a>&nbsp;<a  href="/privacy" target="blank"> Privacy Policy</a></div>
@@ -46,5 +31,3 @@
           </div>
       </div>
   </div>
-</div>
-<app-footer></app-footer>
