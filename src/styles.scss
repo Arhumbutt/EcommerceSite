@@ -7,3 +7,20 @@
         font-size: 30px;
     }
 }
+.a-n-p{
+    textarea{
+        height: 22px;
+        resize: none;
+    }
+    mat-radio-group{
+        label{
+            margin: 0 8px 0 0;
+        }
+    }
+    .mat-radio-label-content{
+        padding-left: 2px;
+        padding-right: 10px;
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
