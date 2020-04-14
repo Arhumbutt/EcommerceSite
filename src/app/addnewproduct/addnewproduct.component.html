@@ -1,6 +1,5 @@
 <div class="container a-n-p">
-  <div class="d-flex">
-    
+  <div class="d-flex">    
     <form class="row">
       <header class="col-lg-12">
         Add New Prodect
@@ -9,96 +8,87 @@
 
         <div class="col-lg-12">
           <mat-form-field class="example-full-width">
-            <input required matInput [(ngModel)]="username" name="username" placeholder="Product Title">
+            <input required matInput [(ngModel)]="title" name="username" placeholder="Product Title">
           </mat-form-field>
         </div>
         <div class="col-lg-12">
           <mat-form-field>
-            <mat-label>Price</mat-label>
-            <select matNativeControl required>
-              <option value="Piece">Piece</option>
-              <option value="Piece">Piece</option>
-              <option value="Piece">Piece</option>
-              <option value="Piece">Piece</option>
+            <mat-label>Piece</mat-label>
+            <select matNativeControl required (change)="getValuePiece($event.target.value)">
+              <option *ngFor="let item of selectpiece" [value]="item.value">{{item.type}}</option>
+             
             </select>
           </mat-form-field>
         </div>
         <div class="col-lg-12">
           <mat-form-field>
             <mat-label>Product Category</mat-label>
-            <select matNativeControl required>
-              <option value="Product Category">Product Category</option>
-              <option value="Product Category">Product Category</option>
-              <option value="Product Category">Product Category</option>
-              <option value="Product Category">Product Category</option>
+            <select matNativeControl required (change)="getValueProductCategory($event.target.value)">
+              <option *ngFor="let item of selectcategory" [value]="item.value">{{item.type}}</option>
+            
             </select>
           </mat-form-field>
         </div>
         <div class="col-lg-12">
-          <mat-radio-group aria-label="Select an option">
-            <label for="">InStock</label>
-            <mat-radio-button value="1">True</mat-radio-button>
-            <mat-radio-button value="2">False</mat-radio-button>
-          </mat-radio-group>
+            <label for=""> InStock</label>
+            <mat-checkbox value="1" (change)="InStock('1')"></mat-checkbox>
         </div>
-
-       
-       
-
-     
-
-
-
-        
       </div>
-
       <div class="col-lg-6 p-0">
-
         <div class="col-lg-12">
           <mat-form-field>
-            <mat-label>Fabeic Type</mat-label>
-            <select matNativeControl required>
-              <option value="Product Category">Product Category</option>
-              <option value="Product Category">Product Category</option>
-              <option value="Product Category">Product Category</option>
-              <option value="Product Category">Product Category</option>
-            </select>
+            <mat-label>Fabric Type</mat-label>
+            <select matNativeControl required (change)="getValueFabricType($event.target.value)">
+              <option *ngFor="let item of selectfabrictype" [value]="item.value">{{item.type}}</option>
+              </select>
           </mat-form-field>
         </div>
-
 
         <div class="col-lg-12">
           <mat-form-field class="example-full-width">
             <mat-label>Product Description</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+            <textarea matInput [(ngModel)]="desc"  name="desc" placeholder="Ex. It makes me feel..." ></textarea>
           </mat-form-field>
         </div>
         <div class="col-lg-12">
           <mat-form-field class="example-full-width">
-            <input required matInput [(ngModel)]="username" name="username" placeholder="Price">
+            <input required matInput [(ngModel)]="price" name="price" placeholder="Price">
           </mat-form-field>
         </div>
         <div class="col-lg-12">
           <mat-radio-group aria-label="Select an option">
             <label for="">Gender</label>
-            <mat-radio-button value="1">Women</mat-radio-button>
-            <mat-radio-button value="2">Men</mat-radio-button>
+            <mat-radio-button  value="1" (change)="gender('1')">Women</mat-radio-button>
+            <mat-radio-button value="2" (change)="gender('2')">Men</mat-radio-button>
           </mat-radio-group>
         </div>
 
-       
-
-       
-
-
-
-       
       </div>
-
-
-
-
-      <button type="button" class="btn btn-info">Submit</button>
+      <div class="col-md-12 text-center">
+        <div class="formrow-1">
+          <div class="uploadphotobx"><i 
+              class="fa fa-cloud-upload"></i>
+            <h4 >Upload Product Photos</h4><label 
+              class="uploadBox">Click to Upload Photos
+               <input type="file" #fileImportInput id="file1" name="file" class="file" data-preview-file-type="text"
+               (change)="onChange($event)" multiple accept=".jpg, .jpeg, .png">
+              </label>
+          </div>
+          <i (click)="upload()"> </i>
+          
+        </div>
+        <div class="upload-img">
+            <ng-container *ngFor="let img of url; let i=index">
+              
+                <div class="img-box">
+                  <i class="fa fa-times" (click)="removepic(i)"></i>
+    
+                  <img [src]="img">
+                </div>
+            </ng-container>
+          </div>
+      </div>
+      <button type="button" class="btn btn-info" (click)="_AddNewproduct()">Submit</button>
     </form>
   </div>
 </div>

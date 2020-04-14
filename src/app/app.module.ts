@@ -52,6 +52,7 @@ import {
 } from '@angular/material';
 import { LoginService } from './login/login_service';
 import { UserdashboardComponent } from './sidebar-layout/userdashboard/userdashboard.component';
+import { addproductService } from './addnewproduct/addnewproductservice';
 
 @NgModule({
   exports: [
@@ -152,7 +153,7 @@ import { UserdashboardComponent } from './sidebar-layout/userdashboard/userdashb
   ],
   providers: [
     
-    LoginService ,Config ],
+    LoginService ,Config, addproductService ],
   bootstrap: [AppComponent]
 })
 
