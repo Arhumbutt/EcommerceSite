@@ -161,12 +161,47 @@
         margin-top: 30px;
     }
 }
-.accordion .card-header:after {
-    font-family: 'FontAwesome';  
-    content: "\f068";
-    float: right; 
-}
-.accordion .card-header.collapsed:after {
-    /* symbol for "collapsed" panels */
-    content: "\f067"; 
+.slider-section{
+    h1{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 100;
+    }
+    .slider-box{
+        padding: 15px;
+        margin: 15px;
+        border-radius: 5px;
+        transition: .2s all ease-in-out;
+        cursor: pointer;
+        &:hover{
+            box-shadow: 0px 0px 8px 2px #ccc;
+        }
+        .img{
+            img{
+                width: 100%;
+            }
+        }
+        .about-pro{
+            a{
+                font-size: 12px;
+                color: #000;
+                text-transform: uppercase;
+                display: block;
+                margin-top: 10px;
+            }
+            .new-p{
+                font-size: 16px;
+                color: #c00;
+                display: block;
+                font-weight: 500;
+            }
+            .old-p{
+                font-size: 16px;
+                color: #000;
+                text-decoration: line-through;
+                display: block;
+                font-weight: 500;
+            }
+        }
+    }
 }
