@@ -16,7 +16,7 @@ export class AddnewproductComponent implements OnInit {
       desc
        price
         checkgender
-   img
+   filetoup:any = [];
   constructor(private _serv:addproductService) { }
   // https://ownstyle.herokuapp.com/product/product_post
    
@@ -77,10 +77,16 @@ export class AddnewproductComponent implements OnInit {
       this.checkgender='M'
     }
   }
+  handleFileInput(files: FileList) {
+
+    this.filetoup = files;
+
+    console.log('Files are::', this.filetoup);
+  }
    _AddNewproduct()
    {
  
-    this._serv.postProduct(this.title , this.piece , this.cat , this.instock , this.febric , this.desc ,this.price , this.checkgender , this.img).subscribe(
+    this._serv.postProduct(this.title , this.piece , this.cat , this.instock , this.febric , this.desc ,this.price , this.checkgender , this.filetoup).subscribe(
       data => {
         // swal.fire({
         //   type: 'success',

@@ -11,7 +11,7 @@ import { UserdashboardComponent } from "./sidebar-layout/userdashboard/userdashb
 const routes: Routes = [
   { path: "", component: HomeComponent },
 
-      { path: 'listedproducts', component: ListedproductsComponent },
+     
       { path: 'productdetail', component: ProductdetailComponent },
       { path: 'login', component: LoginComponent },
       // { path: 'admindashboard', component: AdmindashboardComponent },
@@ -24,7 +24,7 @@ const routes: Routes = [
         children: [
           { path: 'admindashboard', component: AdmindashboardComponent },
           { path: 'addnewproduct', component: AddnewproductComponent },
-     
+          { path: 'listedproducts', component: ListedproductsComponent },
         ]
       }
     ];

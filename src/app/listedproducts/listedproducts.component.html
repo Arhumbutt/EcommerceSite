@@ -1,134 +1,123 @@
-
-  <div class="container-fluid product-container">
-    <div class="product">
-      <div class="side-bar product-sidebar">
-        <button class="closs" (click)="close()">
-            <i class="fa fa-times"></i>
-        </button>
-      
-      <ul>
-      <li>
-          <div id="accordion">
-            <div class="card">
-              <div class="card-header" id="heading-1">
-                <h5 class="mb-0">
-                  <a role="button" data-toggle="collapse" href="#collapse-5" aria-expanded="true" aria-controls="collapse-5">
-                      Shop by Category
-                  </a>
-                </h5>
-              </div>
-              <div id="collapse-5" class="collapse show" data-parent="#accordion" aria-labelledby="heading-1">
-                <div class="card-body">
-                  <ul class=""> 
-                      <li >
-                      </li>
-                      <li>UTVs</li>
-                      <li >Perfumes & Fragrances</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-            <!--/ Panel -->
-        </li>
-      <li>
-          <div id="accordion">
-            <div class="card">
-              <div class="card-header" id="heading-1">
-                <h5 class="mb-0">
-                  <a role="button" data-toggle="collapse" href="#collapse-6" aria-expanded="false" aria-controls="collapse-1">
-                      Shop by Store
-                  </a>
-                </h5>
-              </div>
-              <div id="collapse-6" class="collapse" data-parent="#accordion" aria-labelledby="heading-1">
-                <div class="card-body">
-                  <ul class="">
-                      <li >
-                          </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-            <!--/ Panel -->
-        </li>
-      <li>
-          <!-- <div id="accordion">
-            <div class="card">
-              <div class="card-header" id="heading-1">
-                <h5 class="mb-0">
-                  <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
-                    Shop by Type
-                  </a>
-                </h5>
-              </div>
-              <div id="collapse-1" class="collapse" data-parent="#accordion" aria-labelledby="heading-1">
-                <div class="card-body">
-                  <ul class="">
-                      <li *ngFor="let items of producttype">
-                        <a (click)="getFilterTypeList(items.Type)">{{items.Type}}</a>
-                      </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div> -->
-            <!--/ Panel -->
-        </li>
-      <li>
-          <div id="accordion">
-            <div class="card">
-              <div class="card-header" id="heading-2">
-                <h5 class="mb-0">
-                  <a role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
-                    Others
-                  </a>
-                </h5>
-              </div>
-              <div id="collapse-2" class="collapse" data-parent="#accordion" aria-labelledby="heading-2">
-                <div class="card-body">
-                  <ul>
-                    <li>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-            <!--/ Panel -->
-        </li>
-      </ul>
-
-      <!-- <p>Price</p> -->
-        <!-- <ul class="check-box-list"> -->
-          <!-- <li>
-              <form id="radio_btn_select">
-                  <div class="d-block">
-                      <input type = "radio" name = "radSize" id = "sizeSmall" value = "small" />
-                      <label for = "sizeSmall"> Under $35.00</label>
-                  </div>
-                  <div class="d-block">
-                      <input type = "radio" name = "radSize" id = "sizeMed" value = "medium" />
-                      <label for = "sizeMed"> Over $35.00</label> 
-                  </div>
-                </form>
-          </li> -->
-          <!-- <li class="price-limit">
-            <span>$</span>
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="Min Price" [(ngModel)]="minPrice">
-            </mat-form-field>
-            <span>- $</span>
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="Max Price" [(ngModel)]="maxPrice">
-            </mat-form-field>
-            <button (click)="getFilterCategoryList()">
-                <i class="fa fa-play"></i>
-            </button>
-          </li> -->
-        <!-- </ul> -->
-
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Product Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Piece</th>
+            <th scope="col">InStock</th>
+            <th scope="col">Category</th>
+            <th scope="col">Fabric type</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let items of ProductList_array.Result" >
+          <tr>
+            
+            <td> <img src="{{items.product_image}}" ></td>
+            <td>{{items.product_title}}</td>
+            <td>{{items.product_piece}}</td>
+            <td *ngIf="items.In_Stock == true" style="color: green;">Available</td>
+            <td *ngIf="items.In_Stock == false" style="color: red;">Out Stock</td>
+            <td>{{items.product_category}}</td>
+            <td>{{items.product_fabric}}</td>
+            <td>{{items.product_description}}</td>
+            <td>{{items.product_price}}</td>
+            <td *ngIf="items.product_gender == 'W'">Women</td>
+            <td *ngIf="items.product_gender == 'M'">Men</td>
+            <i class="fa fa-trash" aria-hidden="true" data-toggle="modal" (click)="_GetProductDetailByID(items.id)" data-target="#myModalDeleteProduct"></i>
+            <i class="fas fa-edit" aria-hidden="true" data-toggle="modal" (click)="_GetProductDetailByID(items.id)" data-target="#myModalUpdateProduct" ></i>    <!-- </div> -->
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+
+</div>
+<div class="modal fade" id="myModalUpdateProduct" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Update Product Detail</h4>
+      </div>
+      <div class="modal-body text-center">
+        <form [formGroup]="form_updateproduct">
+          
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Product Title</label>
+            <input type="email" class="form-control" formControlName="p_Title"  [(ngModel)]="ProductDetailList_array.product_title" placeholder="Title">
+          </div>
+          <div class="form-group">
+            <mat-radio-group aria-label="Select an option">
+              <label for="">Gender</label>
+              <mat-radio-button  *ngIf="ProductDetailList_array.product_gender == 'W'" checked   (change)="gender('1')">Women</mat-radio-button>
+              <mat-radio-button *ngIf="ProductDetailList_array.product_gender == 'M'" checked   (change)="gender('2')">Men</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Pieces</label>
+            <select class="form-control" formControlName="p_Piece"  [(ngModel)]="ProductDetailList_array.product_piece" >
+              <option *ngFor="let item of selectpiece" [value]="item.value">{{item.type}}</option>
+            
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Fabric Type</label>
+            <select class="form-control" formControlName="p_FabricType" [(ngModel)]="ProductDetailList_array.product_fabric" >
+              <option *ngFor="let item of selectfabrictype" [value]="item.value">{{item.type}}</option>
+             
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Product Category</label>
+            <select class="form-control" formControlName="p_Cat" [(ngModel)]="ProductDetailList_array.product_category" >
+              <option *ngFor="let item of selectcategory" [value]="item.value">{{item.type}}</option>
+             
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Product Description</label>
+            <textarea class="form-control" formControlName="p_Description" [(ngModel)]="ProductDetailList_array.product_description" ></textarea>
+          </div>
+          <div class="form-group">
+            <label for=""> InStock</label>
+            <mat-checkbox value="value" [ngModel]="value" formControlName="p_Stock" (change)="InStock('1')"></mat-checkbox>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Product Price</label>
+          <input type="email" class="form-control" formControlName="p_Price"  [(ngModel)]="ProductDetailList_array.product_price" placeholder="pkr...">
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn_black" (click)="_UpdateProduct()" data-dismiss="modal">Update Product</button>
+        <button type="button" class="btn btn-default btn_black" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+ </div>
+<div class="modal fade" id="myModalDeleteProduct" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Confirmation Alert</h4>
+      </div>
+      <div class="modal-body text-center">
+        <p>Do you want to Delete This Product?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn_black" (click)="DeleteProduct()" data-dismiss="modal">Delete Product</button>
+        <button type="button" class="btn btn-default btn_black" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+ </div>

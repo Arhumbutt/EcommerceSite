@@ -68,13 +68,16 @@
         <div class="formrow-1">
           <div class="uploadphotobx"><i 
               class="fa fa-cloud-upload"></i>
-            <h4 >Upload Product Photos</h4><label 
-              class="uploadBox">Click to Upload Photos
-               <input type="file" #fileImportInput id="file1" name="file" class="file" data-preview-file-type="text"
-               (change)="onChange($event)" multiple accept=".jpg, .jpeg, .png">
-              </label>
+            <h4 >Upload Product Photos</h4>
+            <input type="file" #fileImportInput  id="txtFileUpload" class="form-control" (change)="handleFileInput($event.target.files)" accept="image/*" multiple="multiple">
+             
+            <!-- <label 
+                class="uploadBox">Click to Upload Photos
+                 <input type="file" #fileImportInput id="file1" name="file" class="file" data-preview-file-type="text"
+                 (change)="onChange($event)" multiple accept=".jpg, .jpeg, .png">
+              </label> -->
           </div>
-          <i (click)="upload()"> </i>
+          <!-- <i (click)="upload()"> </i> -->
           
         </div>
         <div class="upload-img">
