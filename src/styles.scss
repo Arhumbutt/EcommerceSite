@@ -22,5 +22,17 @@
         padding-right: 10px;
     }
 }
+.slide-l , .slide-r{
+    position: absolute;
+    top: 46%;
+    font-size: 40px;
+    z-index: 2;
+}
+.slide-l{
+    left: -50px;
+}
+.slide-r{
+    right: -50px;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
