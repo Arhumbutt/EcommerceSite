@@ -53,6 +53,7 @@ import {
 import { LoginService } from './login/login_service';
 import { UserdashboardComponent } from './sidebar-layout/userdashboard/userdashboard.component';
 import { addproductService } from './addnewproduct/addnewproductservice';
+import { FilterbycategoryComponent } from './filterbycategory/filterbycategory.component';
 
 @NgModule({
   exports: [
@@ -98,7 +99,7 @@ import { addproductService } from './addnewproduct/addnewproductservice';
     ListedproductsComponent,
     ProductdetailComponent,
     AddnewproductComponent,
-    AdmindashboardComponent, UserdashboardComponent
+    AdmindashboardComponent, UserdashboardComponent, FilterbycategoryComponent
   ],
   imports: [
     // BrowserModule ,

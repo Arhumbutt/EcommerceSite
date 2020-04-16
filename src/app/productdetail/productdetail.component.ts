@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { addproductService } from "./../addnewproduct/addnewproductservice";
 declare var $:any;
 @Component({
   selector: 'app-productdetail',
@@ -6,8 +7,8 @@ declare var $:any;
   styleUrls: ['./productdetail.component.scss']
 })
 export class ProductdetailComponent implements OnInit {
-
-  constructor() { }
+  productdetail_array:any=[]
+  constructor( private serv:addproductService) { }
 
   ngOnInit() {
     $('.multiple-items').slick({
@@ -18,9 +19,26 @@ export class ProductdetailComponent implements OnInit {
       prevArrow: '<i class="fa fa-angle-left slide-l"></i>'
     });
 
-
-
+    this.GetProductDetail()
 
   }
+
+  GetProductDetail()
+    {
+
+      this.serv.getproductdetailbyid(1).subscribe(data=>{
+       this.productdetail_array=data['Result']
+       this.productdetail_array.product_title
+       this.productdetail_array.In_Stock
+       this.productdetail_array.product_category
+       this.productdetail_array.product_fabric
+       this.productdetail_array.product_description
+       this.productdetail_array.product_price
+       this.productdetail_array.product_title
+       this.productdetail_array.product_gender
+       this.productdetail_array.product_image
+       console.log(data)
+      })
+    }
 
 }

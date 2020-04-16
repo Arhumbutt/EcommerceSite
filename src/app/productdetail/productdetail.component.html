@@ -3,7 +3,7 @@
         <div class="col-lg-5">
             <div class="img-section">
                 <div class="big-img">
-                    <img src="https://www.junaidjamshed.com/media/catalog/product/2/0/20-115s_1_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=560&width=436" alt="">
+                    <img src="{{productdetail_array.product_image}}" alt="">
                 </div>
                 <div class="small-img">
                     <img src="https://www.junaidjamshed.com/media/catalog/product/2/0/20-115s_1_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=110&width=86S" alt="">
@@ -14,27 +14,27 @@
             </div>
         </div>
         <div class="col-lg-7 pro-detail">
-            <h3 class="tittle">JLAWN-S-20-115/S Suzani</h3>
-            <span>SKU J-GL110610</span>
-            <p>IN STOCK</p>
-            <a href="#">BE THE FIRST TO REVIEW THIS PRODUCT</a>
+            <h3 class="tittle">{{productdetail_array.product_title}}</h3>
+            <span>{{productdetail_array.product_fabric}}</span>
+            <p *ngIf="productdetail_array.In_Stock == true">IN STOCK</p>
+          
             <div class="price">
-                <span class="new">PKR3,893</span>
-                <span class="old">PKR5,190</span>
+                <span class="new">PKR {{ productdetail_array.product_price}}</span>
+                <!-- <span class="old">PKR5,190</span> -->
             </div>
             <hr class="mb-5">
             <div class="size">
-                <label for="">SIZE</label>
+                <!-- <label for="">SIZE</label>
                 <div class="seclect-size">
                     <span>XS</span>
                     <span>S</span>
                     <span>M</span>
                     <span class="no-avil">XL</span>
-                </div>
-                <a href="#" class="size-chart">
+                </div> -->
+                <!-- <a href="#" class="size-chart">
                     <img src="https://www.junaidjamshed.com/static/version1586704397/frontend/Rltsquare/junaidjamshed/en_US/Plumrocket_SizeChart/images/rule.png" alt="">
                     SIZE CHART
-                </a>
+                </a> -->
                 <br>
                 <button class="add-to-bag">
                     ADD TO BAG
@@ -42,10 +42,8 @@
                 <a href="" class="add-to-fav">
                     <i class="fa fa-heart"></i>
                 </a>
-                <p class="details">Collection Type: Basic Mill Print Lawn Shirt - Dyed Laced/Cut Lawn Trouser - Basic Mill Print Lawn Dupatta<br>Wear
-                    Type: Casual<br>Fabric Type: Lawn<br>Neckline: Band Collar With Placket<br>Sleeves: Straight<br>Trouser:
-                    Straight<br>Style Cut: A-Line<br>Length: Long<br>Embellishment: Fabric Manipulation On Sleeves, Lace On Daman And
-                    Trouser
+                <p class="details">
+                    {{productdetail_array.product_description}}
                 </p>            
                 </div>
 

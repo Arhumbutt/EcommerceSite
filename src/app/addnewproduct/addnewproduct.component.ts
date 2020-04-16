@@ -67,7 +67,6 @@ export class AddnewproductComponent implements OnInit {
   }
   gender(value)
   {
-    
     if(value=='1')
     {
       this.checkgender='W'

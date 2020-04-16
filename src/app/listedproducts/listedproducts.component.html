@@ -30,7 +30,7 @@
             <td>{{items.product_price}}</td>
             <td *ngIf="items.product_gender == 'W'">Women</td>
             <td *ngIf="items.product_gender == 'M'">Men</td>
-            <td class="text-center">
+           <td class="text-center">
               <i class="fa fa-trash" aria-hidden="true" data-toggle="modal" (click)="_GetProductDetailByID(items.id)" data-target="#myModalDeleteProduct"></i>
               <i class="fa fa-edit" aria-hidden="true" data-toggle="modal" (click)="_GetProductDetailByID(items.id)" data-target="#myModalUpdateProduct" ></i>    <!-- </div> -->  
             </td>
@@ -88,20 +88,20 @@
           <div class="form-group col-lg-6">
             <mat-radio-group aria-label="Select an option">
               <label for="" class="mr-3">Gender</label>
-              <mat-radio-button  *ngIf="ProductDetailList_array.product_gender == 'W'" checked   (change)="gender('1')">Women</mat-radio-button>
-              <mat-radio-button *ngIf="ProductDetailList_array.product_gender == 'M'" checked   (change)="gender('2')">Men</mat-radio-button>
+              <mat-radio-button  *ngIf="ProductDetailList_array.product_gender == 'W'" checked   >Women</mat-radio-button>
+              <mat-radio-button *ngIf="ProductDetailList_array.product_gender == 'M'" checked   >Men</mat-radio-button>
             </mat-radio-group>
           </div>
           <div class="form-group col-lg-6">
+            <img src="{{ProductDetailList_array.product_image}}" alt="">
             <label for="" class="mr-3"> InStock</label>
             <mat-checkbox value="value" [ngModel]="value" formControlName="p_Stock" (change)="InStock('1')"></mat-checkbox>
         </div>
+
         
-        </form>
-      </div>
-      <div class="modal-footer">
         <button type="button" class="btn btn-default btn_black" (click)="_UpdateProduct()" data-dismiss="modal">Update Product</button>
         <button type="button" class="btn btn-default btn_black" data-dismiss="modal">Cancel</button>
+       </form>
       </div>
     </div>
   </div>

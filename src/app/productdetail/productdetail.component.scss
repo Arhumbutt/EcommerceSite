@@ -1,6 +1,10 @@
 .img-section{
     .big-img{
         text-align: center;
+        img {
+            width: 250px;
+       
+        }
     }
     .small-img{
         display: flex;

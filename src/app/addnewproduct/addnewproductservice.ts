@@ -55,9 +55,8 @@ export class addproductService {
   
   }
 
-  // this.productID ,this.form_updateproduct.value['p_Title'] , this.form_updateproduct.value['p_Description'] , this.form_updateproduct.value['p_Price'] , this.form_updateproduct.value['p_Piece'] , this.form_updateproduct.value['p_Cat'] , this.form_updateproduct.value['p_FabricType'] ,this.form_updateproduct.value['p_Stock'] , this.form_updateproduct.value['checkgender'] , this.filetoup
   updateProduct(id ,title , desc , price , piece , cat , febric, instock   , checkgender , fileToUpload: FileList) {
-    // console.log(fileToUpload)
+    console.log(fileToUpload)
     const formData: FormData = new FormData();
     console.log('File to upload in service is:', fileToUpload);
   
@@ -74,13 +73,13 @@ export class addproductService {
     }
     console.log('formData is:', formData);
 
-  //  alert(localStorage.getItem('token'))
-  let headers = new HttpHeaders();
-    headers.append('Authorization', 'JWT ' + localStorage.getItem('token'));
-   headers.append('Content-Type', 'application/json');
-    return this.http.put(Config.api + 'product/product_Edit_Delete/'+id ,formData
-  
-    , { headers: headers }).pipe(
+   alert(localStorage.getItem('token'))
+  // let headers = new HttpHeaders();
+  //   headers.append('Authorization', 'JWT ' + localStorage.getItem('token'));
+  //  headers.append('Content-Type', 'application/json');
+    let headers = new HttpHeaders({ 'Authorization': 'JWT '+ ( localStorage.getItem('token')) });
+    headers.append('Content-Type', 'application/json');
+    return this.http.put(Config.api + 'product/product_Edit_Delete/'+id ,formData ,{ headers:headers }).pipe(
         tap(_ => {
         }, error => {
           console.log(error);
@@ -123,4 +122,5 @@ export class addproductService {
           }, error => {
             console.log(error);
           }))  }
+          
 }

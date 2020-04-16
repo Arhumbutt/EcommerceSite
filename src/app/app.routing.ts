@@ -8,6 +8,7 @@ import { ProductdetailComponent } from "./productdetail/productdetail.component"
 import { LoginComponent } from "./login/login.component";
 import { AdmindashboardComponent } from "./sidebar-layout/admindashboard/admindashboard.component";
 import { UserdashboardComponent } from "./sidebar-layout/userdashboard/userdashboard.component";
+import { FilterbycategoryComponent } from "./filterbycategory/filterbycategory.component";
 const routes: Routes = [
   { path: "", component: HomeComponent },
 
@@ -17,7 +18,7 @@ const routes: Routes = [
       // { path: 'admindashboard', component: AdmindashboardComponent },
       { path: 'userdashboard', component: UserdashboardComponent },
       
-      // { path: 'search/:query', component: AddnewproductComponent },
+      { path: 'filterbycategory', component: FilterbycategoryComponent },
 
       {
         path: '',    component: AdmindashboardComponent,
