@@ -1,0 +1,132 @@
+<app-header></app-header>
+<div class="gif">
+  <div class="container">
+      <div class="row">
+          <div class="form-1 form-width">
+              <div class="form-1-header">
+                  <h1>Create Your  Account</h1>
+                  <!-- <ul  class="form-1-sl">
+                      <li ><a (click)="facebooklogin()" ><img 
+                          src="../../../assets/images/icons/icon-facebook.png"></a></li>
+                      <li ><a (click)="googlelogin()"><img 
+                          src="../../../assets/images/icons/icon-Google.png"></a></li>
+                  </ul> -->
+              </div>
+              <div class="form-1-body text-center">
+                  <form [formGroup]="register" (ngSubmit)="onRegister(register.value)" role="form"
+                      class="row input-forms signup-from">
+
+                      <div class="col-lg-6 col-md-6">
+                          <mat-form-field class="example-full-width">
+                              <input required class="text-capitalize" matInput formControlName="Fname"  minlength="2"  maxlength="64" name="FirstName" placeholder="First Name">
+                              <mat-error *ngIf="register.controls.Fname.value == ''">
+                                  <strong class="error-block">First Name cannot be empty</strong>
+                              </mat-error>
+                              <mat-error *ngIf="register.controls.Fname.errors?.minlength">
+                                  First Name must be between 2 to 64 characters
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="col-lg-6 col-md-6">
+                          <mat-form-field class="example-full-width">
+                              <input required matInput class="text-capitalize" formControlName="Lname"  minlength="2"  maxlength="64" name="LastName" placeholder="Last Name">
+                              <mat-error *ngIf="register.controls.Lname.value == ''">
+                                  <strong class="error-block">Last Name cannot be empty</strong>
+                              </mat-error>
+                              <mat-error *ngIf="register.controls.Lname.errors?.minlength">
+                                  Last Name must be between 2 to 64 characters
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="col-lg-6 col-md-6">
+                          <mat-form-field class="example-full-width">
+                              <input required matInput formControlName="username"   [(ngModel)]="username" name="username" (keyup)="usernameCheck()" placeholder="Username" maxlength="64" minlength="3">
+                              <mat-error *ngIf="register.controls.username.value == ''">
+                                  <strong class="error-block">UserName cannot be empty</strong>
+                              </mat-error>
+                              <mat-error *ngIf="register.controls.username.errors?.minlength">
+                                      <strong> Username must be between 3 and 64 characters </strong>
+                                  </mat-error>
+                                  <p *ngIf="invaliduser && username != ''" class="error">
+                                          Username already exists
+                                      </p>
+                          </mat-form-field>
+                          
+                      </div>
+
+                      <div class="col-lg-6 col-md-6">
+                          <mat-form-field class="example-full-width">
+                              <input required matInput formControlName="email"  [(ngModel)]="email" name="email"  (keyup)="useremailCheck()" placeholder="Email">
+                              <mat-error *ngIf="register.controls.email.value == ''">
+                                  <strong class="error-block">Email cannot be empty</strong>
+                              </mat-error>
+                              <mat-error *ngIf="register.controls.email.hasError('email')">
+                                  Please enter a valid email address
+                              </mat-error>
+                              <p *ngIf="invaliduser && email != ''" class="error">
+                                      Email already exists
+                                  </p>
+                          </mat-form-field>
+                          
+                      </div>
+
+                      <div class="col-lg-6 col-md-6">
+                          <mat-form-field class="example-full-width">
+                              <input required matInput formControlName="password" [type]="hide ? 'password' : 'text'" (ngModelChange)="onChange($event)"
+                                  name="password" placeholder="Password">
+                              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+                              </mat-icon>
+                              <mat-error *ngIf="register.controls.password.value == ''">
+                                  <strong class="error-block">Password cannot be empty</strong>
+                              </mat-error>
+                              <mat-error *ngIf="register.controls.password.hasError('pattern')">
+                                  Password must be 8 characters long 
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+
+                      <div class="col-lg-6 col-md-6">
+                          <mat-form-field class="example-full-width">
+                              <input required matInput  formControlName="confirmpassword" [type]="hide1 ? 'password' : 'text'" name="confrimpassword"  (ngModelChange)="onChange($event)"
+                                  placeholder="Confirm Password">
+                              <mat-icon matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility_off' : 'visibility'}}
+                              </mat-icon>
+                              <mat-error *ngIf="register.controls.confirmpassword.value == ''">
+                                  <strong class="error-block">Confirm Password cannot be empty</strong>
+                              </mat-error>
+                              <mat-error *ngIf="invalid==true && register.controls.confirmpassword.value!=''"><strong>Password must match
+                              </strong></mat-error>
+                          </mat-form-field>
+                      </div>
+                      <br/>
+                      <div class="col-lg-9 col-md-9 s-toggle text-left" >
+                      <mat-slide-toggle (change)="changeCheck($event)" checked>
+                          I understand and agree that the use of this Website, Mobile Apps, AI and ALL other related Technology Platforms are subject to the KingBestMall   <a target="_blank" href="/terms">Terms of Use</a>
+                          and
+                          <a target="_blank" href="/privacy">Privacy Policy</a>
+                              </mat-slide-toggle><br>
+                      </div>
+
+                     
+                      <!-- <div class="col-lg-9 s-toggle text-left">
+                          <mat-slide-toggle (change)="changeCheck($event)">
+                              By clicking on the "Signup" button below, you understand and agree that the use of this
+                              Website, Mobile Apps, AI and ALL other related Technology Platforms are subject to the
+                              <a target="_blank" href="/terms">Terms of Use</a>
+                              and
+                              <a target="_blank" href="/privacy">Privacy Policy</a>
+                          </mat-slide-toggle><br>
+                      </div> -->
+                      <button type="submit"  class="login-btn">Sign Up</button>
+                  </form>
+                  <div class="have-account">Already a Member? 
+                      <a  routerLink='/login'> Sign In</a>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  
+  </div>
+</div>
+<app-footer></app-footer>

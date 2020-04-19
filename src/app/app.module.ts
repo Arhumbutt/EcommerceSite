@@ -54,6 +54,10 @@ import { LoginService } from './login/login_service';
 import { UserdashboardComponent } from './sidebar-layout/userdashboard/userdashboard.component';
 import { addproductService } from './addnewproduct/addnewproductservice';
 import { FilterbycategoryComponent } from './filterbycategory/filterbycategory.component';
+import { WatchlistComponent } from './watchlist/watchlist.component';
+import { MycheckoutComponent } from './mycheckout/mycheckout.component';
+import { headerService } from './header/headerservice';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   exports: [
@@ -99,7 +103,7 @@ import { FilterbycategoryComponent } from './filterbycategory/filterbycategory.c
     ListedproductsComponent,
     ProductdetailComponent,
     AddnewproductComponent,
-    AdmindashboardComponent, UserdashboardComponent, FilterbycategoryComponent
+    AdmindashboardComponent, UserdashboardComponent, FilterbycategoryComponent, WatchlistComponent, MycheckoutComponent, SignupComponent
   ],
   imports: [
     // BrowserModule ,
@@ -154,7 +158,7 @@ import { FilterbycategoryComponent } from './filterbycategory/filterbycategory.c
   ],
   providers: [
     
-    LoginService ,Config, addproductService ],
+    LoginService ,Config, addproductService,headerService ],
   bootstrap: [AppComponent]
 })
 

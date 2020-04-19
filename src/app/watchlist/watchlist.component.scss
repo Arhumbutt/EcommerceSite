@@ -1,0 +1,270 @@
+.watchlist{
+    min-height: 450px;
+    h3{
+        font-size: 30px;
+        font-weight: 500;
+        color: #000;
+        position: relative;
+        margin-bottom: 12px;
+        text-align: center;
+        text-shadow: 1px 3px 4px #ccc;
+    }
+    // .list-view{
+    //     height: 170px;
+    //     display: flex;
+    //     border-radius: 10px;
+    //     box-shadow: 0 4px 8px #ccc;
+    //     padding: 10px 0px;
+    //     margin-bottom: 20px;
+    //     flex-wrap: wrap;
+    //     .left{
+    //         display: flex;
+    //         // justify-content: center;
+    //         align-items: center;
+    //         height: 100%;
+    //         border-right: 1px solid #ccc;
+    //         // input{
+    //         //     zoom: 1.5;
+    //         //     margin-left: 5px;
+    //         // }
+    //         .img{
+    //             width: 150px;
+    //             height: 150px;
+    //             display: flex;
+    //             justify-content: center;
+    //             align-items: center;
+    //             overflow: hidden;
+    //             margin: 0 auto;
+    //             img{
+    //                 width: 100%;
+    //             }
+    //         }
+    //     }
+    // }
+    // .detail{
+    //     .item-title{
+    //         .title{
+    //             overflow: hidden;
+    //             text-overflow: ellipsis;
+    //             white-space: nowrap;
+    //             display: block;
+    //             color: #000;
+    //             font-weight: 600;
+    //             font-size: 1rem;
+    //         }
+    //     }
+    //     .info{
+    //         display: flex;
+    //         margin: 12px 0 0;
+    //         .item-info{
+    //             padding: 0 18px;
+    //             span{
+    //                 display: block;
+    //             }
+    //             .info-label {
+    //                 font-size: .75rem;
+    //                 text-transform: capitalize;
+    //                 color: #6e6e6e;
+    //             }
+    //             .info-price {
+    //                 font-size: 1rem;
+    //                 color: #000;
+    //             }
+    //             .info-shipping{
+    //                 color: #6e6e6e;
+    //                 font-size: .75rem;
+    //             }
+    //             .color{
+    //                 font-weight: 600;
+    //                 color: #a91f73;
+    //                 text-transform: capitalize;
+    //             }
+    //         }
+    //     }
+    //     .status{
+    //         span{
+    //             margin-right: 5px;
+    //         }
+    //     }
+    // }
+    // .btn{
+    //     button{
+    //         display: block;
+    //         width: 100%;
+    //         background: linear-gradient(90deg, #a91f73 0, #ff4270 100%);
+    //         padding: 5px;
+    //         color: #fff;
+    //         border-radius: 50px;
+    //         box-shadow: 0 4px 8px #ccc;
+    //         border: 1px solid #ff4270;
+    //         margin-bottom: 10px;
+    //         &:hover{
+    //             background: #fff;
+    //             color: #ff4270;
+    //             border: 1px solid #ff4270;
+    //         }
+    //     }
+    // }
+}
+// .pl-0{
+//     padding-left: 0;
+// }
+// .border-r{
+//     border-right: 1px solid #ccc;
+// }
+// .checked {
+//     display: block;
+//     position: relative;
+//     // padding-left: 35px;
+//     // margin-bottom: 12px;
+//     cursor: pointer;
+//     font-size: 22px;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//   }
+ 
+  .grid-box{
+    // padding: 10px;
+    // border: 1px solid #e2e1e1;
+    // border-radius: 10px;
+    // background: #fff;
+    margin: 10px 0;
+    .pro-img{
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        cursor: pointer;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    .title{
+        color: #111820;
+        text-transform: capitalize;
+        font-size: .875rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 10px 0 0;
+        cursor: pointer;
+    }
+    .price{
+        color: #000;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .rating{
+        i{
+            color: #f9bc0f;
+        }
+    }
+    button{
+        display: block;
+        text-align: center;
+        width: 55%;
+        margin: 5px auto 0;
+        background: #041e42;
+        color: #fff;
+        border-radius: 50px;
+        padding: 2px;
+        border: 1px solid #041e42;
+        &:hover{
+            background: #fff;
+            border: 1px solid #041e42 !important;
+            color: #041e42 !important;
+        }
+    }
+    .block2-price{
+        display: flex;
+        align-items: center;
+        color: black;
+        margin-bottom: 0px;
+        font-weight: 600;
+        font-size: 15px;
+        .icons-h-c{
+            margin-left: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i{
+                font-size: 22px;
+                margin-left: 5px;
+                cursor: pointer;
+            }
+        }
+        .addwishlist img{
+            width: 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+  /* Hide the browser's default checkbox */
+  .checked input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: -8px;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #c3c3c3;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checked:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .checked input:checked ~ .checkmark {
+    background-color: #a91f73;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checked input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checked .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .color-red{
+    color: #c00;
+  }
+  .fa-spinner{
+    position: absolute;
+    top: 84px;
+    left: 38%;
+}

@@ -1,0 +1,144 @@
+<app-header></app-header>
+<div class="watchlist">
+  <h3>My Wishlist</h3>
+  <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-12 p-sm-lr-5"   *ngFor="let items of watchlistArray.Results">
+        <div class="grid-box">
+
+
+          <div class="position-relative c-default text-center logo-height" [hidden]="items.loaded">
+            <img class="logo-img" src='../../../assets/images/icons/Logo-Text.png'>
+            <i class="fa fa-spinner fa-pulse fa-3x"></i>
+        </div>
+        <div class="propert-img" (load)="items.loaded = true" [hidden]="!items.loaded" (click)="getproductDetail(items.Sub_Cat_Name,items.Type,items.id)">
+            <!-- <div id="demo{{i}}"  class="carousel slide"> -->
+                <!-- <div class="carousel-inner" > -->
+            <div class="carousel-item active">
+                <img class="prop-img" src="{{items.product_detail.product_image}}" (load)="items.loaded = true" [hidden]="!items.loaded" onError="src='../../../assets/images/icons/Logo-Text.png'">
+            </div>
+        </div>
+
+          <!-- <div class="position-relative c-default text-center logo-height" [hidden]="items.loaded">
+            <img class="logo-img" src='../../../assets/images/icons/Logo-Text.png'>
+            <i class="fa fa-spinner fa-pulse fa-3x"></i>
+        </div>
+          <div class="pro-img" (click)="getproductDetail(items.Sub_Cat_Name,items.Type,items.id)" (load)="items.loaded = true" [hidden]="!items.loaded">
+            <img  src="{{items.Thumbnail}}">
+            </div> -->
+          <p class="title" (click)="getproductDetail(items.Sub_Cat_Name,items.Type,items.id)">{{items.product_detail.product_title}}</p>
+          <span class="block2-price m-text6 p-r-5" (click)="getproductDetail(items.Sub_Cat_Name,items.Type,items.id)">{{items.product_detail.product_price | currency}}
+            <div class="icons-h-c">
+              <a class="addwishlist"  (click)="remove(items.id)"  matTooltip="click and remove from my wishlist" > 
+                  <i class="fa fa-trash color-red"></i>
+              </a>
+              <a  (click)="addcartlist(items.id)" matTooltip="add to cart">
+                <i class="fa fa-cart-plus"></i>
+              </a>
+            </div>
+          </span>
+          <!-- <ul class="rating">
+            <li >
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </li>
+          </ul> -->
+          <button routerLink="/pay-now" > Shop Now </button>
+        </div>
+      </div>
+
+
+    <!-- <div class="col-lg-12">
+      <div class="list-view" *ngFor="let items of watchlistArray.Results">
+          <div class="col-lg-3 left">
+              <label class="checked">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+              </label>
+              <div class="img">
+                <img    src="{{items.Pic}}">
+              </div>
+          </div>
+          <div class="col-lg-7 detail border-r"  >
+              <div class="item-title">
+                <a class="title">{{items.P_Title}}</a>
+                <p>Condition: New</p>
+              </div>
+              <div class="info">
+                  <div class="item-info pl-0 border-r">
+                      <span class="info-label">ITEM PRICE: </span>
+                      <span class="info-price"><span class="color">{{items.FixedPrice | currency}}</span></span>
+                      <span class="info-shipping">Free Shipping</span>
+                    </div>
+                    <div class="item-info border-r">
+                        <span class="info-label">TIME ENDS: </span>
+                        <span class="info-price"><span class="color">Nov-30,</span></span>
+                        <span class="info-shipping">08:26</span>
+                    </div>
+                    <div class="item-info">
+                        <span class="info-label">SELLER: </span>
+                        <span class="info-price"><a href="#" class="color">deal_expo (7816)</a></span>
+                        <span class="info-shipping">99% positive feedback</span>
+                    </div>
+              </div>
+              <div class="status">
+                <span class="badge badge-success">Sold</span>
+                <span class="badge badge-primary">111 Watching</span>
+              </div>
+          </div>
+          <div class="col-lg-2 btn">
+            <button>Buy it Now</button>
+            <button>Add to Cart</button>
+          </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="col-lg-12">
+        <div class="list-view">
+            <div class="col-lg-3 left">
+                <label class="checked">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="img">
+                  <img src="https://i.ebayimg.com/thumbs/images/g/sLsAAOSwb3hb9Zu7/s-l225.webp">
+                </div>
+            </div>
+            <div class="col-lg-7 detail border-r">
+                <div class="item-title">
+                  <a href="#" class="title">Nikon 50mm f/1.8D AF Nikkor Lens for Nikon Digital SLR Cameras - Brand New</a>
+                  <p>Condition: New</p>
+                </div>
+                <div class="info">
+                    <div class="item-info pl-0 border-r">
+                        <span class="info-label">ITEM PRICE: </span>
+                        <span class="info-price"><span class="color">US $99.00</span></span>
+                        <span class="info-shipping">Free Shipping</span>
+                      </div>
+                      <div class="item-info border-r">
+                          <span class="info-label">TIME ENDS: </span>
+                          <span class="info-price"><span class="color">Nov-30,</span></span>
+                          <span class="info-shipping">08:26</span>
+                      </div>
+                      <div class="item-info">
+                          <span class="info-label">SELLER: </span>
+                          <span class="info-price"><a href="#" class="color">deal_expo (7816)</a></span>
+                          <span class="info-shipping">99% positive feedback</span>
+                      </div>
+                </div>
+                <div class="status">
+                  <span class="badge badge-success">Sold</span>
+                  <span class="badge badge-primary">111 Watching</span>
+                </div>
+            </div>
+            <div class="col-lg-2 btn">
+              <button>Buy it Now</button>
+              <button>Add to Cart</button>
+            </div>
+        </div>
+      </div> -->
+  </div>
+</div>
+<app-footer></app-footer>

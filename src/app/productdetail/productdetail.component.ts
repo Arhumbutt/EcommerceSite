@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { addproductService } from "./../addnewproduct/addnewproductservice";
+import { headerService } from "./../header/headerservice";
 declare var $:any;
 @Component({
   selector: 'app-productdetail',
@@ -8,7 +9,8 @@ declare var $:any;
 })
 export class ProductdetailComponent implements OnInit {
   productdetail_array:any=[]
-  constructor( private serv:addproductService) { }
+  qty=1
+  constructor(  private serv1 :headerService,  private serv:addproductService) { }
 
   ngOnInit() {
     $('.multiple-items').slick({
@@ -23,7 +25,7 @@ export class ProductdetailComponent implements OnInit {
 
   }
 
-  GetProductDetail()
+    GetProductDetail()
     {
 
       this.serv.getproductdetailbyid(1).subscribe(data=>{
@@ -37,6 +39,20 @@ export class ProductdetailComponent implements OnInit {
        this.productdetail_array.product_title
        this.productdetail_array.product_gender
        this.productdetail_array.product_image
+       console.log(data)
+      })
+    }
+    AddtoWatchList()
+    {
+
+      this.serv1.addtowatchlist(1).subscribe(data=>{
+       console.log(data)
+      })
+    }
+    AddtoCartList()
+    {
+
+      this.serv1.addtocartlist(1 , this.qty).subscribe(data=>{
        console.log(data)
       })
     }

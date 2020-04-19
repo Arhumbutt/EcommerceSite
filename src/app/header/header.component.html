@@ -10,7 +10,7 @@
       <div class="nav-bar">
         <ul class="d-flex list-style-none">
           <li>
-            <a href="">Woman</a>
+            <a href="">Women</a>
             <div class="hover-menu">
               <ul>
                  <li>
@@ -75,7 +75,42 @@
              </ul>
             </div>
           </li>
-          <li>
+          <li *ngIf="currentuser" class="conter" >
+            <a routerLink="/watchlist">
+                <i class="fa fa-heart"></i>
+                <span *ngIf="totalResults == 0">0</span>
+                <span>{{totalResults}}</span>
+            </a>
+            <div class="list-hover">
+                <ul>
+                     <li *ngFor="let items of watchlistArray.Results"> 
+                        <div class="fav-box ng-star-inserted">
+                            <div class="addtocart-time">{{items.product_detail.product_title}}</div>
+                            <i class="fa fa-times" matTooltip="remove watchlist"
+                                (click)="remove(items.id)"></i>
+                            <div class="fav-data-padd"
+                                (click)="getproductDetail(items.Sub_Cat_Name,items.Type,items.id)">
+                                <div class="property-img">
+                                    <img src="{{items.product_detail.product_image}}">
+                                </div>
+                                <div class="fav-data">
+                                    <p>{{items.product_detail.product_fabric}}</p>
+                                    <p>{{items.product_detail.product_category}}</p>
+                                    <div
+                                        (click)="getproductDetail(items.Sub_Cat_Name,items.Type,items.id)">
+                                        <strong>{{items.product_detail.product_price | currency}}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li> 
+                </ul>
+                <div class="total" >
+                    <button routerLink="/watchlist">Go to My Wishlist</button>
+                </div>
+            </div>
+        </li>
+          <li *ngIf="currentuser">
             <a href="">
               <i class="fa fa-shopping-cart"></i>
             </a>
@@ -83,13 +118,13 @@
           <li>
             <a href=""><i class="fa fa-search"></i></a>
           </li>
-          <li>
+          <li *ngIf="!currentuser">
             <a href="" routerLink="/login">
               Sign In 
             </a>
           </li>
-          <li>
-            <a href="">Sign Up</a>
+          <li *ngIf="!currentuser">
+            <a href=""  routerLink="/signup">Sign Up</a>
           </li>
         </ul>
       </div>

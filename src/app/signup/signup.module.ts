@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { Http, HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// import { LoginRoutes } from './login.routing';
-import { LoginComponent } from './login.component';
+import { SignupComponent } from "./signup.component";
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatAutocompleteModule,
     MatButtonModule,
     MatIconModule,
     MatInputModule,
     MatFormFieldModule, } from "@angular/material";
+ 
 @NgModule({
     imports: [
-        RouterModule,
         CommonModule,
+        MatSlideToggleModule,
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
@@ -24,12 +25,9 @@ import { MatAutocompleteModule,
         MatIconModule,
         MatInputModule,
         MatFormFieldModule,
-            // RecapchaModule
+      
     ],
-    declarations: [
-        // LoginComponent
-    ],
+    declarations: [SignupComponent],
     providers: []
 })
-
-export class LoginModule { }
+export class UsersignupModule { }

@@ -9,16 +9,20 @@ import { LoginComponent } from "./login/login.component";
 import { AdmindashboardComponent } from "./sidebar-layout/admindashboard/admindashboard.component";
 import { UserdashboardComponent } from "./sidebar-layout/userdashboard/userdashboard.component";
 import { FilterbycategoryComponent } from "./filterbycategory/filterbycategory.component";
+import { WatchlistComponent } from "./watchlist/watchlist.component";
+import { MycheckoutComponent } from "./mycheckout/mycheckout.component";
+import { SignupComponent } from "./signup/signup.component";
 const routes: Routes = [
   { path: "", component: HomeComponent },
 
      
       { path: 'productdetail', component: ProductdetailComponent },
       { path: 'login', component: LoginComponent },
-      // { path: 'admindashboard', component: AdmindashboardComponent },
-      { path: 'userdashboard', component: UserdashboardComponent },
-      
+      { path: 'signup', component: SignupComponent },
+      { path: 'userdashboard', component: UserdashboardComponent },    
       { path: 'filterbycategory', component: FilterbycategoryComponent },
+      { path: 'watchlist', component: WatchlistComponent },
+      { path: 'checkout', component: MycheckoutComponent },
 
       {
         path: '',    component: AdmindashboardComponent,

@@ -101,7 +101,6 @@ export class ListedproductsComponent implements OnInit {
 
   _UpdateProduct()
   {
- alert(this.ProductDetailList_array.product_image)
    this.serv.updateProduct(this.productID ,this.form_updateproduct.value['p_Title'] , this.form_updateproduct.value['p_Description'] , this.form_updateproduct.value['p_Price'] , this.form_updateproduct.value['p_Piece'] , this.form_updateproduct.value['p_Cat'] , this.form_updateproduct.value['p_FabricType'] ,this.form_updateproduct.value['p_Stock'] , this.ProductDetailList_array.product_gender , this.ProductDetailList_array.product_image).subscribe(
      data => {
        this. _AllProduct()

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
             }
             else
             {
-              this._nav.navigate(['/userdashboard'])
+              this._nav.navigate(['/'])
             }
           })
       })
