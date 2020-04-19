@@ -57,7 +57,7 @@ export class headerService {
           //   headers.append('Authorization', 'JWT ' + localStorage.getItem('token'));
           // headers.append('Content-Type', 'application/json');  
           return this.http.post(Config.api + 'product/products_checkout_get_post',{
-            product:cartproductid,
+            product_id:cartproductid,
             qty:qty
 
           }, { headers: headers }).pipe(

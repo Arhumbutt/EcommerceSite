@@ -16,15 +16,22 @@ export class SignupService {
   }
 
 // User Signup APi
-  register(auth): Observable<any> {
-  const s = this.http.post(Config.api +'product/Register_user', auth)
+  register(fname , lname , email , username ,password ) {
+    return this.http.post(Config.api +'product/Register_user', {
+       "firstname":fname,
+      "lastname":lname,
+      "email":email,
+      "username":username,
+      "password":password,
+      "role":"U"
+
+  })
     .pipe(
       tap(_ => {
       }, error => {
         console.log(error)
       })
     );
-  return s;
 }
 
 }

@@ -38,6 +38,7 @@ export class SignupComponent implements OnInit {
       'Fname': ['', Validators.compose([Validators.required]),Validators.minLength(2)],
       'Lname': ['', Validators.compose([Validators.required]), Validators.minLength(2)],
       'confirmpassword': ['', Validators.compose([Validators.required, Validators.pattern(this.password_regex)])],
+      // 'role':'U'
     },
     {
       validator: PasswordValidation.MatchPassword // your validation method
@@ -79,7 +80,7 @@ export class SignupComponent implements OnInit {
   onRegister() {
     // if (this.recapcha.check()) {
       this.isequal = true;
-      this.serv_.register(this.register.value).subscribe(
+      this.serv_.register(this.register.value['Fname'] , this.register.value['Lname'] , this.register.value['email'] , this.register.value['username'] ,  this.register.value['password'] ).subscribe(
         data => {
           // Swal.fire({
           //   type: 'success',
