@@ -1,0 +1,190 @@
+.product-page{
+    h1{
+        font-size: 30px;
+        font-weight: 300;
+        margin-bottom: 15px;
+    }
+    .layout{
+        display: flex;
+        .sidebar{
+            width: 300px;
+            padding: 10px;
+            h5{
+                padding: 10px 0px 20px;
+                font-size: 14px;
+                color: #444;
+                margin: 0;
+            }
+            .card-header{
+                background: #fff;
+                padding: 5px 0;
+            }
+            .btn-default{
+                padding: 0;
+            }
+            a{
+                font-size: 14px;
+                color: #444;
+                text-decoration: none;
+            }
+            a:hover , a:focus{
+                font-size: 14px;
+                color: #444;
+                text-decoration: none;
+            }
+        }
+        .content-area{
+            width: 100%;
+            padding: 0 20px;
+            .filter-bar{
+                display: flex;
+                align-items: center;
+                .left-side{
+                    button{
+                        margin-right: 20px;
+                        color: #000;
+                        background: none;
+                        border: none;
+                    }
+                    p{
+                        margin: 0;
+                        font-size: 14px;
+                    }
+                }
+                .right-side{
+                    margin-left: auto;
+                    display: flex;
+                    align-items: center;
+                    p{
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            // Srat grid view
+            .grid-view{
+                .g-view{
+                    margin: 0 5px;
+                    padding: 10px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    &:hover{
+                        box-shadow: 0 0 8px 2px #ccc;
+                    }
+                    .g-img{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .about-pro{
+                        a{   
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            color: #444; 
+                        }
+                        .btns{
+                            display: flex;
+                            align-items: center;
+                            button{
+                                background: #fff;
+                                color: #000;
+                                border: 2px solid #000;
+                                white-space: nowrap;
+                                font-size: 14px;
+                                line-height: 0;
+                                padding: 18px 15px;
+                                &:hover{
+                                    background: #000;
+                                    color: #fff;
+                                }
+                            }
+                            .price{
+                                display: flex;
+                                flex-direction: column;
+                                .new{
+                                    color: #c00;
+                                }
+                                .old{
+                                    color: #444;
+                                    text-decoration: line-through;
+                                }
+                            }
+                            .dis{
+                                background: #c00;
+                                color: #fff;
+                                margin-left: auto;
+                                padding: 0 5px;
+                            }
+                        }   
+                    }
+                }
+            }
+
+            // Strat list view
+            .list-view{
+                display:none;
+                .l-view{
+                    cursor: pointer;
+                    border-radius: 5px;
+                    &:hover{
+                        box-shadow: 0 0 8px 2px #ccc;
+                    }
+                    .list-img{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .l-about-pro{
+                        margin-top: 40px;
+                        a{   
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            color: #444; 
+                        }
+                        .btns{
+                            display: flex;
+                            align-items: center;
+                            button{
+                                background: #fff;
+                                color: #000;
+                                border: 2px solid #000;
+                                white-space: nowrap;
+                                font-size: 14px;
+                                line-height: 0;
+                                padding: 18px 15px;
+                                &:hover{
+                                    background: #000;
+                                    color: #fff;
+                                }
+                            }
+                            .price{
+                                display: flex;
+                                flex-direction: column;
+                                .new{
+                                    color: #c00;
+                                }
+                                .old{
+                                    color: #444;
+                                    text-decoration: line-through;
+                                }
+                            }
+                            .dis{
+                                background: #c00;
+                                color: #fff;
+                                margin-left: auto;
+                                padding: 0 5px;
+                            }
+                        }   
+                    }
+                }
+            }
+        }
+    }
+}
+[data-toggle="collapse"] i:before{
+    content: "\f106";
+}
+
+[data-toggle="collapse"].collapsed i:before{
+    content: "\f107";
+}
