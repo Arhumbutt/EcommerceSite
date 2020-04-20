@@ -1,15 +1,15 @@
+<app-header></app-header>
 <div class="product-page mt-5">
-  <h1 class="text-center">Women</h1>
+  <h1 class="text-center" *ngIf="gender =='W' ">Women</h1>
+  <h1 class="text-center" *ngIf="gender =='M' ">Men</h1>
+  <h1 class="text-center" *ngIf="gender ==' ' "></h1>
   <div class="layout">
     <div class="sidebar">
       <h5>SHOPPING OPTIONS</h5>
-
-      <!--  -->
       <div class="card-header d-flex justify-content-between" id="headingCollapse1">
         <div>
             <a class="collapsed" data-toggle="collapse" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
-              CATEGORY
-            </a>
+              GENDER         </a>
         </div>
         <div>
             <a data-toggle="collapse" class="collapsed btn btn-default btn-xs text-right" href="#collapse1" aria-label="Expand/Collapse Card 1" aria-expanded="false" role="button">
@@ -18,13 +18,99 @@
         </div>
     </div>
     <div id="collapse1" class="collapse" aria-labelledby="headingCollapse1">
-        <div class="card-body">
-            Here is some wonderful content that you can't see...until expanded!
+      <mat-radio-group aria-label="Select an option">
+        <label for="">Gender</label>
+        <mat-radio-button  value="1" (change)="filterproduct( piece , cat , febric  , minprice ,maxprice,'1' )">Women</mat-radio-button>
+        <mat-radio-button value="2" (change)="filterproduct( piece , cat , febric  , minprice ,maxprice, '2' )">Men</mat-radio-button>
+      </mat-radio-group>
+    </div>
+      <div class="card-header d-flex justify-content-between" id="headingCollapse2">
+        <div>
+            <a class="collapsed" data-toggle="collapse" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              CATEGORY
+            </a>
+        </div>
+        <div>
+            <a data-toggle="collapse" class="collapsed btn btn-default btn-xs text-right" href="#collapse2" aria-label="Expand/Collapse Card 1" aria-expanded="false" role="button">
+                <i class="fa" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
-      <!--  -->
-
-
+    <div id="collapse2" class="collapse" aria-labelledby="headingCollapse2">
+        <!-- <div class="card-body">
+            Here is some wonderful content that you can't see...until expanded!
+        </div> -->
+        <li (click)="filterproduct( piece , 'stiched' , febric  , minprice ,maxprice, checkgender )">
+          Stiched
+          </li>
+          <li (click)="filterproduct( piece , 'un-stiched' , febric  , minprice ,maxprice, checkgender )">
+            Un-Stiched
+            </li>
+    </div>
+    <div class="card-header d-flex justify-content-between" id="headingCollapse3">
+      <div>
+          <a class="collapsed" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+            FABRIC TYPE          </a>
+      </div>
+      <div>
+          <a data-toggle="collapse" class="collapsed btn btn-default btn-xs text-right" href="#collapse3" aria-label="Expand/Collapse Card 1" aria-expanded="false" role="button">
+              <i class="fa" aria-hidden="true"></i>
+          </a>
+      </div>
+  </div>
+  <div id="collapse3" class="collapse" aria-labelledby="headingCollapse3">
+      <!-- <div class="card-body">
+          Here is some wonderful content that you can't see...until expanded!
+      </div> -->
+        <li (click)="filterproduct( piece , cat , 'lawn'  , minprice ,maxprice, checkgender )">
+        LAWN
+        </li>
+        <li (click)="filterproduct( piece , cat , 'cotton'  , minprice ,maxprice, checkgender )">
+         COTTON
+        </li>
+        <li (click)="filterproduct( piece , cat , 'shafoon'  , minprice ,maxprice, checkgender )">
+          SHAFOON
+          </li>
+  </div>
+  <div class="card-header d-flex justify-content-between" id="headingCollapse4">
+    <div>
+        <a class="collapsed" data-toggle="collapse" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+          PRODUCT TYPE          </a>
+    </div>
+    <div>
+        <a data-toggle="collapse" class="collapsed btn btn-default btn-xs text-right" href="#collapse4" aria-label="Expand/Collapse Card 1" aria-expanded="false" role="button">
+            <i class="fa" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+<div id="collapse4" class="collapse" aria-labelledby="headingCollapse4">
+    
+      <li (click)="filterproduct( '1 piece' , cat , fabric  , minprice ,maxprice, checkgender )">
+      1 Piece
+      </li>
+      <li (click)="filterproduct( '2 piece' , cat , fabric  , minprice ,maxprice, checkgender )">
+        2 Piece
+      </li>
+      <li (click)="filterproduct( '3 piece' , cat , fabric  , minprice ,maxprice, checkgender )">
+        3 Piece
+        </li>
+</div>
+<div class="card-header d-flex justify-content-between" id="headingCollapse5">
+  <div>
+      <a class="collapsed" data-toggle="collapse" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+        PRICE RANGE          </a>
+  </div>
+  <div>
+      <a data-toggle="collapse" class="collapsed btn btn-default btn-xs text-right" href="#collapse5" aria-label="Expand/Collapse Card 1" aria-expanded="false" role="button">
+          <i class="fa" aria-hidden="true"></i>
+      </a>
+  </div>
+</div>
+<div id="collapse5" class="collapse" aria-labelledby="headingCollapse5">
+  
+    <label for="">Minimum<input type="text"></label> 
+    <label for="">Miximum<input type="text"></label>
+</div>
     </div>
     <div class="content-area">
         <div class="filter-bar">
@@ -56,116 +142,45 @@
         <div class="grid-view">
           <div class="row">
             <div class="col-lg-4">
-              <div class="g-view">
+              <div class="g-view" *ngFor="let filter of filteredproduct.Result">
                 <div class="g-img">
-                  <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjbl-20-006_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=755&width=589&canvas=589:755" alt="">
+                  <img src="{{filter.product_image}}" alt="">
                 </div>
                 <div class="about-pro">
-                  <a href="#">JJBL-20-006 FB/F-275</a>
+                  <a href="#">{{filter.product_title}}</a>
                   <div class="btns">
                     <button>ADD TO BAG</button>
                     <div class="price">
-                      <span class="new">PKR1,867.50</span>
-                      <span class="old">PKR2,490.00</span>
+                      <span class="new">PKR{{filter.product_price}}</span>
+                      <!-- <span class="old">PKR2,490.00</span> -->
                     </div>
-                    <p class="dis">25% OFF</p>
+                    <p class="dis">{{filter.product_fabric}}</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4">
-              <div class="g-view">
-                <div class="g-img">
-                  <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjbl-20-006_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=755&width=589&canvas=589:755" alt="">
-                </div>
-                <div class="about-pro">
-                  <a href="#">JJBL-20-006 FB/F-275</a>
-                  <div class="btns">
-                    <button>ADD TO BAG</button>
-                    <div class="price">
-                      <span class="new">PKR1,867.50</span>
-                      <span class="old">PKR2,490.00</span>
-                    </div>
-                    <p class="dis">25% OFF</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="g-view">
-                <div class="g-img">
-                  <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjbl-20-006_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=755&width=589&canvas=589:755" alt="">
-                </div>
-                <div class="about-pro">
-                  <a href="#">JJBL-20-006 FB/F-275</a>
-                  <div class="btns">
-                    <button>ADD TO BAG</button>
-                    <div class="price">
-                      <span class="new">PKR1,867.50</span>
-                      <span class="old">PKR2,490.00</span>
-                    </div>
-                    <p class="dis">25% OFF</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="g-view">
-                <div class="g-img">
-                  <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjbl-20-006_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=755&width=589&canvas=589:755" alt="">
-                </div>
-                <div class="about-pro">
-                  <a href="#">JJBL-20-006 FB/F-275</a>
-                  <div class="btns">
-                    <button>ADD TO BAG</button>
-                    <div class="price">
-                      <span class="new">PKR1,867.50</span>
-                      <span class="old">PKR2,490.00</span>
-                    </div>
-                    <p class="dis">25% OFF</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="g-view">
-                <div class="g-img">
-                  <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjbl-20-006_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=755&width=589&canvas=589:755" alt="">
-                </div>
-                <div class="about-pro">
-                  <a href="#">JJBL-20-006 FB/F-275</a>
-                  <div class="btns">
-                    <button>ADD TO BAG</button>
-                    <div class="price">
-                      <span class="new">PKR1,867.50</span>
-                      <span class="old">PKR2,490.00</span>
-                    </div>
-                    <p class="dis">25% OFF</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
         <!-- End Grid View -->
 
          <!-- Start List View -->
          <div class="list-view">
-            <div class="row l-view">
+            <div class="row l-view" *ngFor="let filter of filteredproduct.Result" >
               <div class="col-lg-2">
-                <div class="list-img">
-                  <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjbl-20-006_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:" alt="">
+                <div class="list-img" >
+                  <img src="{{filter.product_image}}" alt="">
                 </div>
               </div>
               <div class="col-lg-10 l-about-pro">
-                <a href="#">JJBL-20-006 FB/F-275</a>
+                <a href="#">{{filter.product_title}}</a>
                 <div class="btns">
                   <button>ADD TO BAG</button>
                   <div class="price">
-                    <span class="new">PKR1,867.50</span>
-                    <span class="old">PKR2,490.00</span>
+                    <span class="new">PKR{{filter.product_price}}</span>
+                    <!-- <span class="old">PKR2,490.00</span> -->
                   </div>
-                  <p class="dis">25% OFF</p>
+                  <p class="dis">{{filter.product_fabric}}</p>
                 </div>
               </div>
             </div>
@@ -175,3 +190,4 @@
     </div>
   </div>
 </div>
+<app-footer></app-footer>

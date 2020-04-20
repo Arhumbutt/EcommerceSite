@@ -10,7 +10,7 @@ declare var $: any;
 })
 export class HeaderComponent implements OnInit {
 
-  constructor( private serv:headerService) { }
+  constructor( private serv:headerService , private router: Router) { }
    categories:any=[]
    currentuser
    watchlistArray:any=[]
@@ -29,9 +29,17 @@ export class HeaderComponent implements OnInit {
 
      })
    }
-  mouseEnterCat() {
-      this.categories = ['Men' ,'Women']
-  }
+   navigatetofilterproduct(gender ,type ,piece)
+   {
+    this.router.navigate(['/filterbycategory'], {
+      queryParams: {
+        'param1': gender,
+        'param2': type, 
+        'param3':piece
+      }
+     })
+   }
+   
 
 
 }

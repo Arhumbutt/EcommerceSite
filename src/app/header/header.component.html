@@ -4,7 +4,7 @@
   <div class="container">
     <div class="d-flex align-items-center">
       <div class="d-flex logo-area">
-        <div class="" routerLink=''><img  src="./../../assets/images/newlogo.jpeg" alt=""></div>
+        <div class="" routerLink=''><img  src="./../../assets\images\Ownstyle_logo.png" alt=""></div>
         <p class="">Welcome to OwnYourStyle</p>  
       </div>
       <div class="nav-bar">
@@ -15,29 +15,20 @@
               <ul>
                  <li>
                    <p>STITCHED</p>
-                 </li>
-                 <li>
-                   <a href="">item 1</a>
-                 </li>
-                 <li>
-                  <a href="">item 1</a>
+                 </li> 
+              <!-- </ul>
+              <ul> -->
+                <li>
+                  <p>UN-STITCHED</p>
                 </li>
                 <li>
-                  <a href="">item 1</a>
-                </li> 
-              </ul>
-              <ul>
-                <li>
-                  <p>KURTI</p>
+                  <a (click)="navigatetofilterproduct('W','un-stiched','1piece')">1 Piece</a>
                 </li>
                 <li>
-                  <a href="">item 1</a>
-                </li>
-                <li>
-                 <a href="">item 1</a>
+                 <a (click)="navigatetofilterproduct('W','un-stiched','2piece')">2 Piece</a>
                </li>
                <li>
-                 <a href="">item 1</a>
+                 <a (click)="navigatetofilterproduct('W','un-stiched','3piece')">3 Piece</a>
                </li> 
              </ul>
              <div class="cat-img">
@@ -49,20 +40,17 @@
             <a href="">Men</a>
             <div class="hover-menu">
               <ul>
-                 <li>
-                   <p>STITCHED</p>
+                 <li (click)="navigatetofilterproduct('M','Kameez Shalwar')">
+                   <p>Kameez Shalwar</p>
                  </li>
                  <li>
-                   <a href="">item 1</a>
+                   <a (click)="navigatetofilterproduct('M','un-stiched')">UN-STITCHED</a>
                  </li>
                  <li>
-                  <a href="">item 1</a>
+                  <a (click)="navigatetofilterproduct('M','shawl')">Shawl</a>
                 </li>
-                <li>
-                  <a href="">item 1</a>
-                </li> 
               </ul>
-              <ul>
+              <!-- <ul>
                 <li>
                   <p>UN-STITCHED</p>
                 </li>
@@ -75,7 +63,7 @@
                <li>
                  <a href="">item 1</a>
                </li> 
-             </ul>
+             </ul> -->
              <div class="cat-img">
               <img src="https://www.junaidjamshed.com/media/wysiwyg/Category_Banners/men.jpg" alt="">
              </div>

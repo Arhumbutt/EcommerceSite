@@ -58,6 +58,7 @@ import { WatchlistComponent } from './watchlist/watchlist.component';
 import { MycheckoutComponent } from './mycheckout/mycheckout.component';
 import { headerService } from './header/headerservice';
 import { SignupComponent } from './signup/signup.component';
+import { filterproductService } from './filterbycategory/filterproductservice';
 
 @NgModule({
   exports: [
@@ -158,7 +159,7 @@ import { SignupComponent } from './signup/signup.component';
   ],
   providers: [
     
-    LoginService ,Config, addproductService,headerService ],
+    LoginService ,Config, addproductService,headerService ,filterproductService ],
   bootstrap: [AppComponent]
 })
 
