@@ -18,23 +18,42 @@
             position: relative;
             .hover-menu{
                 position: absolute;
-                width: 200px;
+                width: 400px;
                 z-index: 1;
+                right: -188px;
                 top: 32px;
                 box-shadow: 0 0 7px 0px #ccc;
                 border-radius: 5px;
-                padding: 5px;
+                padding: 10px;
                 background: #fff;
                 justify-content: space-around;
                 visibility: hidden;
+                ul{
+                    width: 33%;
+                }
+                div{
+                    width: 33%;
+                    img{
+                        width: 100%;
+                    }
+                }
                 p{
                     margin: 0;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #444;
+                }
+                a{
+                    color: #444;
+                    padding: 10px 0;
+                    font-size: 12px;
+                    font-weight: 400
                 }
             }
             a{
-                color: #545454;
+                color: #444;
                 padding: 10px;
-                font-weight: 500;
+                font-weight: 400;
                 &:hover{
                     text-decoration: none;
                     color: #000;

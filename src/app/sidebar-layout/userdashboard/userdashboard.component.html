@@ -1,44 +1,60 @@
-<!-- 
+
 <app-header></app-header>
 <div class="dashboard-layout">
     <div class="side-bar">
         <button class="closs" (click)="close()">
                         <i class="fa fa-times"></i>
         </button>
-        <div class="position-relative text-center">
+        <!-- <div class="position-relative text-center">
                 <input (change)="onChange($event);uploadProfile()" type="file" #image
                         accept="image/gif, image/jpeg, image/png" required id="input-file1">
 
                 <img class="camera" src="../../../assets/images/icons/photo-compnay.png" alt="">
-        </div>
+        </div> -->
         <ul  class="">
                 <li ><a routerLink="/mydetail" routerLinkActive="active-route">
-                        <img src="../../../assets/images/icons/dashboard icons/my detial   2 .png"> My
-                        Profile</a></li>
+                        <img src="../../../assets/images/icons/dashboard icons/my detial   2 .png"> My Account</a></li>
                 <li ><a routerLink="/user-dashboard" routerLinkActive="active-route" >
-                <img src="../../../assets/images/icons/dashboard icons/seller dashboard 1.png"> Seller Dashboard</a></li>
-                <li ><a routerLink="/post-ads"  routerLinkActive="active-route">
-                        <img src="../../../assets/images/icons/dashboard icons/add new product 2.png"> Add New Product</a></li>
-                <li  ><a routerLink="/admin-products"  routerLinkActive="active-route">
-                        <img src="../../../assets/images/icons/dashboard icons/Status.png"> Selling</a></li>
+                <img src="../../../assets/images/icons/dashboard icons/seller dashboard 1.png"> My Order</a></li>
+                <li ><a routerLink="/addnewproduct"  routerLinkActive="active-route">
+                        <img src="../../../assets/images/icons/dashboard icons/add new product 2.png"> My Downloadable Products</a></li>
+                <li  ><a routerLink="/listedproducts"  routerLinkActive="active-route">
+                        <img src="../../../assets/images/icons/dashboard icons/Status.png"> My Watch List </a></li>
                 <li ><a routerLink="/paymentmethod"  routerLinkActive="active-route">
-                                <img src="../../../assets/images/icons/dashboard icons/debit-card.png">Payment Methods</a></li>
+                                <img src="../../../assets/images/icons/dashboard icons/debit-card.png"> Address Book </a></li>
                 <li ><a routerLink="/mypurchase" routerLinkActive="active-route">
-                    <img src="../../../assets/images/icons/dashboard icons/my purchase 2.png"> My
-                    Purchases</a></li>
+                    <img src="../../../assets/images/icons/dashboard icons/my purchase 2.png"> Account Information</a></li>
                 <li ><a routerLink="/changepassword" routerLinkActive="active-route">
-                    <img src="../../../assets/images/icons/dashboard icons/account setting 2.png">Change Password</a>
+                    <img src="../../../assets/images/icons/dashboard icons/account setting 2.png"> Store Credit</a>
                 </li>
-                <li   ><a  routerLinkActive="active-route">
-                    <img src="../../../assets/images/icons/dashboard icons/logout.png"> Logout</a>
+                <li ><a routerLink="/changepassword" routerLinkActive="active-route">
+                    <img src="../../../assets/images/icons/dashboard icons/account setting 2.png"> Gift Crad</a>
+                </li>
+                <li ><a routerLink="/changepassword" routerLinkActive="active-route">
+                    <img src="../../../assets/images/icons/dashboard icons/account setting 2.png"> Reward Points</a>
+                </li>
+                <li ><a routerLink="/changepassword" routerLinkActive="active-route">
+                    <img src="../../../assets/images/icons/dashboard icons/account setting 2.png"> Gifts Registry</a>
+                </li>
+                <li ><a routerLink="/changepassword" routerLinkActive="active-route">
+                    <img src="../../../assets/images/icons/dashboard icons/account setting 2.png"> My Product Reviews</a>
+                </li>
+                <li ><a routerLink="/changepassword" routerLinkActive="active-route">
+                    <img src="../../../assets/images/icons/dashboard icons/account setting 2.png"> Newsletters Subscriptions</a>
+                </li>
+                <li ><a routerLink="/changepassword" routerLinkActive="active-route">
+                    <img src="../../../assets/images/icons/dashboard icons/account setting 2.png"> My Invitations</a>
+                </li>
+                <li ><a routerLink="/changepassword" routerLinkActive="active-route">
+                    <img src="../../../assets/images/icons/dashboard icons/account setting 2.png"> My Social Accounts</a>
                 </li>
         </ul>
     </div>
     <div class="dashboard-body">
-        <button class="open" (click)="open()">
+        <!-- <button class="open" (click)="open()">
             <i class="fa fa-bars"></i>
-        </button>
+        </button> -->
         <router-outlet></router-outlet>
     </div>
 </div>
-<app-footer></app-footer> -->
+<app-footer></app-footer>
