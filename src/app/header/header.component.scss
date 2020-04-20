@@ -155,6 +155,7 @@ header{
                     line-height: 22px;
                     color: #041e42;
                     font-size: 14px;
+                    margin: 0;
                 }
                 strong{
                     font-weight: 400;
@@ -162,6 +163,16 @@ header{
                 }
             }
         }
+}
+.total{
+    text-align: center;
+    button{
+        background: #041e42;
+        border: navajowhite;
+        color: #fff;
+        border-radius: 50px;
+        padding: 2px 20px;
+    }
 }
 .conter:hover .list-hover{
     display: block;
