@@ -88,19 +88,24 @@
           <div class="form-group col-lg-6">
             <mat-radio-group aria-label="Select an option">
               <label for="" class="mr-3">Gender</label>
-              <mat-radio-button  *ngIf="ProductDetailList_array.product_gender == 'W'" checked   >Women</mat-radio-button>
-              <mat-radio-button *ngIf="ProductDetailList_array.product_gender == 'M'" checked   >Men</mat-radio-button>
+              <mat-radio-button class="d-flex"  *ngIf="ProductDetailList_array.product_gender == 'W'" checked   >Women</mat-radio-button>
+              <mat-radio-button class="d-flex" *ngIf="ProductDetailList_array.product_gender == 'M'" checked   >Men</mat-radio-button>
             </mat-radio-group>
           </div>
           <div class="form-group col-lg-6">
             <img src="{{ProductDetailList_array.product_image}}" alt="">
-            <label for="" class="mr-3"> InStock</label>
+            <label for="" class="ml-3"> InStock</label>
             <mat-checkbox value="value" [ngModel]="value" formControlName="p_Stock" (change)="InStock('1')"></mat-checkbox>
         </div>
 
+        <div class="col-md-6">
+
+        <button type="button" class="btn btn-dark" (click)="_UpdateProduct()" data-dismiss="modal">Update Product</button>
+        </div>
+        <div class="col-md-6">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancel</button>
         
-        <button type="button" class="btn btn-default btn_black" (click)="_UpdateProduct()" data-dismiss="modal">Update Product</button>
-        <button type="button" class="btn btn-default btn_black" data-dismiss="modal">Cancel</button>
+      </div>
        </form>
       </div>
     </div>
@@ -117,7 +122,7 @@
       <div class="modal-body text-center">
         <p>Do you want to Delete This Product?</p>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer d-flex">
         <button type="button" class="btn btn-default btn_black" (click)="DeleteProduct()" data-dismiss="modal">Delete Product</button>
         <button type="button" class="btn btn-default btn_black" data-dismiss="modal">Cancel</button>
       </div>
