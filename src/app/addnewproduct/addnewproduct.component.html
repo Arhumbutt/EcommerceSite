@@ -4,14 +4,12 @@
       <header class="col-lg-12">
         Add New Prodect
       </header>
-      <div class="col-lg-6 p-0">
-
-        <div class="col-lg-12">
+      <div class="col-lg-6">
           <mat-form-field class="example-full-width">
             <input required matInput [(ngModel)]="title" name="username" placeholder="Product Title">
           </mat-form-field>
-        </div>
-        <div class="col-lg-12">
+        
+        
           <mat-form-field>
             <mat-label>Piece</mat-label>
             <select matNativeControl required (change)="getValuePiece($event.target.value)">
@@ -19,8 +17,7 @@
              
             </select>
           </mat-form-field>
-        </div>
-        <div class="col-lg-12">
+        
           <mat-form-field>
             <mat-label>Product Category</mat-label>
             <select matNativeControl required (change)="getValueProductCategory($event.target.value)">
@@ -28,40 +25,36 @@
             
             </select>
           </mat-form-field>
-        </div>
-        <div class="col-lg-12">
-            <label for=""> InStock</label>
-            <mat-checkbox value="1" (change)="InStock('1')"></mat-checkbox>
-        </div>
+      
+            <mat-checkbox value="1" (change)="InStock('1')" class="mat-checkbox"></mat-checkbox>
+            <label for="" class="pl-2"> InStock</label>
+       
       </div>
-      <div class="col-lg-6 p-0">
-        <div class="col-lg-12">
+      <div class="col-lg-6 ">
+        
           <mat-form-field>
             <mat-label>Fabric Type</mat-label>
             <select matNativeControl required (change)="getValueFabricType($event.target.value)">
               <option *ngFor="let item of selectfabrictype" [value]="item.value">{{item.type}}</option>
               </select>
           </mat-form-field>
-        </div>
-
-        <div class="col-lg-12">
+        
+         
+        
+        
+          <mat-form-field class="example-full-width">
+            <input required matInput [(ngModel)]="price" name="price" placeholder="Price">
+          </mat-form-field>
           <mat-form-field class="example-full-width">
             <mat-label>Product Description</mat-label>
             <textarea matInput [(ngModel)]="desc"  name="desc" placeholder="Ex. It makes me feel..." ></textarea>
           </mat-form-field>
-        </div>
-        <div class="col-lg-12">
-          <mat-form-field class="example-full-width">
-            <input required matInput [(ngModel)]="price" name="price" placeholder="Price">
-          </mat-form-field>
-        </div>
-        <div class="col-lg-12">
+        
           <mat-radio-group aria-label="Select an option">
             <label for="">Gender</label>
             <mat-radio-button  value="1" (change)="gender('1')">Women</mat-radio-button>
             <mat-radio-button value="2" (change)="gender('2')">Men</mat-radio-button>
           </mat-radio-group>
-        </div>
 
       </div>
       <div class="col-md-12 text-center">
@@ -69,7 +62,7 @@
           <div class="uploadphotobx"><i 
               class="fa fa-cloud-upload"></i>
             <h4 >Upload Product Photos</h4>
-            <input type="file" #fileImportInput  id="txtFileUpload" class="form-control" (change)="handleFileInput($event.target.files)" accept="image/*" multiple="multiple">
+            <input type="file" #fileImportInput  id="txtFileUpload" class="form-control image-tag" (change)="handleFileInput($event.target.files)" accept="image/*" multiple="multiple">
              
             <!-- <label 
                 class="uploadBox">Click to Upload Photos

@@ -34,5 +34,8 @@
 .slide-r{
     right: -50px;
 }
+.mat-checkbox .mat-checkbox-inner-container-no-side-margin {
+    margin-top: 4px;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

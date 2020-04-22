@@ -4,7 +4,7 @@
         margin: 29px auto;
         background: #fff;
         border-radius: 10px;
-        box-shadow: 0 0 5px 1px #efefef;
+        box-shadow: 0 0 10px #ccc;
         padding: 15px;
         header{
             background: #041e42;
@@ -30,4 +30,20 @@
             border-radius: 50px;
         }
     }
+}
+.image-tag{
+    position: absolute;
+    right: 224px;
+    width: 273px;
+    top: 8px;
+    opacity: 0;
+}
+.uploadphotobx{
+    box-shadow: 0 0 5px #ccc;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+}
+.mat-checkbox-inner-container-no-side-margin {
+    margin-top: 4px;
 }
