@@ -29,6 +29,23 @@ export class HeaderComponent implements OnInit {
 
      })
    }
+   logout(){
+ 
+  
+    // localStorage.removeItem('currentUser');
+    // localStorage.removeItem('localtoken');
+    // Swal.fire({
+    //   type: 'success',
+    //   title: 'You are successfully Logged Out from KingBestMall',
+    //   showConfirmButton: false,
+    //   timer: 2500, width: '512px',
+    // })
+    localStorage.removeItem('token');
+    localStorage.clear();
+    sessionStorage.clear();
+    this.router.navigate(['/']);
+    // this.loggedin=false
+  }
    navigatetofilterproduct(gender ,type ,piece)
    {
     this.router.navigate(['/filterbycategory'], {
@@ -48,6 +65,14 @@ export class HeaderComponent implements OnInit {
       }
      })
    }
+   get_show_menu(){
+    if (localStorage.getItem('user') == 'yes'){
+      this.router.navigate(['/user-dashboard']);
+    }
+    else if (localStorage.getItem('user') == null){
+      this.router.navigate(['/login']);
+    }
+  }
    
 
 

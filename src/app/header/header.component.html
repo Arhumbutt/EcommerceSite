@@ -120,6 +120,45 @@
           <li *ngIf="!currentuser">
             <a href=""  routerLink="/signup">Sign Up</a>
           </li>
+          <li class="user"  *ngIf="currentuser">
+            <a  class="topbar-social-item">
+                <img src="../../../assets/images/icons/dashboard icons/person.png" alt="">
+                My Dashboard</a>
+            <div class="user-menu">
+                <ul class="">
+                    <li><a routerLink="/mydetail">
+                        <img src="../../../assets/images/icons/dashboard icons/my detial   2 .png">
+                        My Profile</a>
+                    </li>
+                    <!-- <li *ngIf="UserRole==='S'"><a routerLink="/user-dashboard">
+                            <img
+                                src="../../../assets/images/icons/dashboard icons/seller dashboard 1.png">
+                            Seller Dashboard</a></li>
+                    <li *ngIf="UserRole==='S'"><a routerLink="/post-ads">
+                            <img
+                                src="../../../assets/images/icons/dashboard icons/add new product 2.png">
+                            Add New Product</a></li>
+                    <li><a routerLink="/mypurchase">
+                            <img src="../../../assets/images/icons/dashboard icons/my purchase 2.png">
+                            My Purchases</a></li>
+                    <li><a routerLink="/paymentmethod">
+                            <img src="../../../assets/images/icons/dashboard icons/debit-card.png">
+                            Payment Methods</a></li> -->
+                    <li><a routerLink="/watchlist">
+                            <img src="../../../assets/images/icons/dashboard icons/watchlist 2.png">
+                            My Wishlist</a></li>
+<!--                   
+                    <li><a routerLink="/changepassword">
+                            <img
+                                src="../../../assets/images/icons/dashboard icons/account setting 2.png">
+                            Change Password</a></li> -->
+                    <li><a href="#" (click)="logout()">
+                            <img src="../../../assets/images/icons/dashboard icons/logout.png">
+                            Logout</a></li>
+                </ul>
+            </div>
+        </li>
+
         </ul>
       </div>
   </div>

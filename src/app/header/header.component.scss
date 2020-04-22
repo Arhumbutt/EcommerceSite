@@ -178,3 +178,30 @@ header{
     display: block;
     z-index: 1;
 }
+.user-menu{
+    display: none;
+    position: absolute;
+    top: 53px;
+    right: 11px;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.4), 0 6px 20px 0 rgba(0,0,0,.2);
+    padding: 5px 10px 10px;
+    border-radius: 0 0 10px 10px;
+    cursor: auto;
+    width: 200px;
+    li{
+        padding: 2px 0;
+        a{
+            font-weight: 400;
+            font-size: 14px;
+            color: #273c61;
+            position: relative;
+            &:hover{
+                color: #a91f73;
+            }
+        }
+    }
+}
+.user:hover .user-menu{
+    display: block !important;
+}
