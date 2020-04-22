@@ -16,6 +16,7 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
 import { AddnewproductComponent } from './addnewproduct/addnewproduct.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule, CurrencyPipe, DecimalPipe} from '@angular/common';
+import { ImageZoomModule } from "angular2-image-zoom";
 import { Config } from "./config";
 import {
   MatAutocompleteModule,
@@ -112,6 +113,7 @@ import { filterproductService } from './filterbycategory/filterproductservice';
     // AppRoutingModule,
     ReactiveFormsModule, FormsModule ,
     BrowserModule,
+    ImageZoomModule,
     // AppRoutingModule,
     ReactiveFormsModule,
     AppRoutingModule,

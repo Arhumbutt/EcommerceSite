@@ -3,9 +3,14 @@
     <div class="row">
         <div class="col-lg-5">
             <div class="img-section">
-                <div class="big-img">
-                    <img src="{{productdetail_array.product_image}}" alt="">
+                <div class="col-lg-10 col-md-9 text-center zoomer-image" data-toggle="modal" data-target="#myModal">
+						
+                    <img [imageZoom]="productdetail_array.product_image" [src]="productdetail_array.product_image" lensWidth="550" lensHeight="550"
+                        scrollZoom="true">
                 </div>
+                <!-- <div class="big-img">
+                    <img src="{{productdetail_array.product_image}}" alt="">
+                </div> -->
                 <div class="small-img mt-2">
                     <img src="https://www.junaidjamshed.com/media/catalog/product/2/0/20-115s_1_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=110&width=86S" alt="">
                     <img src="https://www.junaidjamshed.com/media/catalog/product/2/0/20-115s_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=110&width=86" alt="">
@@ -61,54 +66,15 @@
     <h1>RELATED PRODUCTS</h1>
 
     <div class="multiple-items">
-        <div class="slider-box">
+        <div class="slider-box" *ngFor="let items of relatedproductlist_array.Result">
+            
             <div class="img">
-                <img src="https://www.junaidjamshed.com/media/catalog/product/2/0/20-365_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:" alt="">
+                <img src="{{items.product_image}}" alt="">
             </div>
             <div class="about-pro">
-                <a href="#">JJLK-S-JSS-20-365 FB/ESB-20-007</a>
-                <span class="new-p">PKR2,392.50</span>
-                <span class="old-p">PKR3,490.00</span>
-            </div>
-        </div>
-        <div class="slider-box">
-            <div class="img">
-                <img src="https://www.junaidjamshed.com/media/catalog/product/2/0/20-365_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:" alt="">
-            </div>
-            <div class="about-pro">
-                <a href="#">JJLK-S-JSS-20-365 FB/ESB-20-007</a>
-                <span class="new-p">PKR2,392.50</span>
-                <span class="old-p">PKR3,490.00</span>
-            </div>
-        </div>
-        <div class="slider-box">
-            <div class="img">
-                <img src="https://www.junaidjamshed.com/media/catalog/product/2/0/20-365_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:" alt="">
-            </div>
-            <div class="about-pro">
-                <a href="#">JJLK-S-JSS-20-365 FB/ESB-20-007</a>
-                <span class="new-p">PKR2,392.50</span>
-                <span class="old-p">PKR3,490.00</span>
-            </div>
-        </div>
-        <div class="slider-box">
-            <div class="img">
-                <img src="https://www.junaidjamshed.com/media/catalog/product/2/0/20-365_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:" alt="">
-            </div>
-            <div class="about-pro">
-                <a href="#">JJLK-S-JSS-20-365 FB/ESB-20-007</a>
-                <span class="new-p">PKR2,392.50</span>
-                <span class="old-p">PKR3,490.00</span>
-            </div>
-        </div>
-        <div class="slider-box">
-            <div class="img">
-                <img src="https://www.junaidjamshed.com/media/catalog/product/2/0/20-365_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:" alt="">
-            </div>
-            <div class="about-pro">
-                <a href="#">JJLK-S-JSS-20-365 FB/ESB-20-007</a>
-                <span class="new-p">PKR2,392.50</span>
-                <span class="old-p">PKR3,490.00</span>
+                <a href="#">{{items.product_title}}</a>
+                <span class="new-p">PKR {{items.product_price}}</span>
+                <!-- <span class="old-p">PKR3,490.00</span> -->
             </div>
         </div>
       </div>

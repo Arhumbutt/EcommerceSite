@@ -30,7 +30,7 @@ export class headerService {
         //   headers.append('Authorization', 'JWT ' + localStorage.getItem('token'));
         // headers.append('Content-Type', 'application/json');  
         return this.http.post(Config.api + 'product/watchlist_get_post',{
-          product:productid
+          "product":productid
         }, { headers: headers }).pipe(
           tap(_ => {
           }, error => {
@@ -57,8 +57,8 @@ export class headerService {
           //   headers.append('Authorization', 'JWT ' + localStorage.getItem('token'));
           // headers.append('Content-Type', 'application/json');  
           return this.http.post(Config.api + 'product/products_checkout_get_post',{
-            product_id:cartproductid,
-            qty:qty
+            "product_id":cartproductid,
+            "qty":qty
 
           }, { headers: headers }).pipe(
             tap(_ => {
@@ -66,5 +66,20 @@ export class headerService {
               console.log(error);
             }))  
           }
+
+          relatedproductlist(cat , type , gender) {
+            let headers = new HttpHeaders({ 'Authorization': 'JWT '+ ( localStorage.getItem('token')) });
+            headers.append('Content-Type', 'application/json'); 
+            return this.http.post(Config.api + 'product/product_filter',{
+               "p_cat":cat,
+              "p_febric":type,
+              "p_gender":gender,
+  
+            }, { headers: headers }).pipe(
+              tap(_ => {
+              }, error => {
+                console.log(error);
+              }))  
+            }
          
 }

@@ -13,6 +13,7 @@ export class ProductdetailComponent implements OnInit {
   qty=1
   sub
   id
+  relatedproductlist_array:any=[]
   constructor(  private serv1 :headerService, private route :ActivatedRoute, private serv:addproductService) { }
 
   ngOnInit() {
@@ -47,6 +48,7 @@ export class ProductdetailComponent implements OnInit {
        this.productdetail_array.product_image
        console.log(data)
       })
+      this.RelatedProductList()
     }
     AddtoWatchList()
     {
@@ -62,5 +64,11 @@ export class ProductdetailComponent implements OnInit {
        console.log(data)
       })
     }
-
+    RelatedProductList()
+    {
+      this.serv1.relatedproductlist(this.productdetail_array.product_category, this.productdetail_array.product_fabric , this.productdetail_array.product_gender).subscribe(data=>{
+       console.log(data)
+       this.relatedproductlist_array=data
+      })
+    }
 }
