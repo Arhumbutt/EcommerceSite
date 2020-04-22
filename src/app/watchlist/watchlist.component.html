@@ -3,96 +3,28 @@
   <h3>My Wishlist</h3>
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 p-0">
-        <div class="g-view">
-          <div class="g-img">
-            <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjbl-20-006_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=755&width=589&canvas=589:755" alt="">
+      <!-- <div *ngIf="watchlistArray.Results.length " >
+        So far you have no any watchlist item.
+      </div> -->
+      <div class="col-lg-3 p-0" *ngIf="watchlistArray.Results.length > 0">
+        <div class="g-view"  *ngFor="let items of watchlistArray.Results ">
+          <div class="g-img" (click)="navigatetoproductdetail(items.product_detail.id)">
+            <img src="{{items.product_detail.product_image}}" alt="">
           </div>
           <div class="about-pro">
-            <a href="#">JJBL-20-006 FB/F-275</a>
+            <a (click)="navigatetoproductdetail(items.product_detail.id)">{{items.product_detail.product_title}}</a>
             <div class="btns">
               <button>ADD TO BAG</button>
               <div class="price">
-                <span class="new">PKR1,867.50</span>
-                <span class="old">PKR2,490.00</span>
+                <span class="new" (click)="navigatetoproductdetail(items.product_detail.id)"> PKR {{items.product_detail.product_price}}</span>
+                <!-- <span class="old">PKR2,490.00</span> -->
               </div>
-              <p class="dis">25% OFF</p>
+              <p class="dis" (click)="navigatetoproductdetail(items.product_detail.id)">{{items.product_detail.product_fabric}}</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 p-0">
-        <div class="g-view">
-          <div class="g-img">
-            <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjbl-20-006_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=755&width=589&canvas=589:755" alt="">
-          </div>
-          <div class="about-pro">
-            <a href="#">JJBL-20-006 FB/F-275</a>
-            <div class="btns">
-              <button>ADD TO BAG</button>
-              <div class="price">
-                <span class="new">PKR1,867.50</span>
-                <span class="old">PKR2,490.00</span>
-              </div>
-              <p class="dis">25% OFF</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 p-0">
-        <div class="g-view">
-          <div class="g-img">
-            <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjbl-20-006_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=755&width=589&canvas=589:755" alt="">
-          </div>
-          <div class="about-pro">
-            <a href="#">JJBL-20-006 FB/F-275</a>
-            <div class="btns">
-              <button>ADD TO BAG</button>
-              <div class="price">
-                <span class="new">PKR1,867.50</span>
-                <span class="old">PKR2,490.00</span>
-              </div>
-              <p class="dis">25% OFF</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 p-0">
-        <div class="g-view">
-          <div class="g-img">
-            <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjbl-20-006_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=755&width=589&canvas=589:755" alt="">
-          </div>
-          <div class="about-pro">
-            <a href="#">JJBL-20-006 FB/F-275</a>
-            <div class="btns">
-              <button>ADD TO BAG</button>
-              <div class="price">
-                <span class="new">PKR1,867.50</span>
-                <span class="old">PKR2,490.00</span>
-              </div>
-              <p class="dis">25% OFF</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 p-0">
-        <div class="g-view">
-          <div class="g-img">
-            <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjbl-20-006_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=755&width=589&canvas=589:755" alt="">
-          </div>
-          <div class="about-pro">
-            <a href="#">JJBL-20-006 FB/F-275</a>
-            <div class="btns">
-              <button>ADD TO BAG</button>
-              <div class="price">
-                <span class="new">PKR1,867.50</span>
-                <span class="old">PKR2,490.00</span>
-              </div>
-              <p class="dis">25% OFF</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </div>

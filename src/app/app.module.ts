@@ -1,6 +1,7 @@
 import { BrowserModule , BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from "./app.routing";
+import {  SharedData} from "./../app/sharedData";
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -159,7 +160,7 @@ import { filterproductService } from './filterbycategory/filterproductservice';
   ],
   providers: [
     
-    LoginService ,Config, addproductService,headerService ,filterproductService ],
+    LoginService ,Config, addproductService,headerService ,filterproductService ,SharedData ],
   bootstrap: [AppComponent]
 })
 

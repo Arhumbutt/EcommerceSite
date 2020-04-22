@@ -79,11 +79,11 @@
                 <ul>
                      <li *ngFor="let items of watchlistArray.Results"> 
                         <div class="fav-box ng-star-inserted">
-                            <div class="addtocart-time">{{items.product_detail.product_title}}</div>
+                            <div class="addtocart-time" (click)="navigatetoproductdetail(items.product_detail.id)">{{items.product_detail.product_title}}</div>
                             <i class="fa fa-times" matTooltip="remove watchlist"
                                 (click)="remove(items.id)"></i>
                             <div class="fav-data-padd"
-                                (click)="getproductDetail(items.Sub_Cat_Name,items.Type,items.id)">
+                            (click)="navigatetoproductdetail(items.product_detail.id)">
                                 <div class="property-img">
                                     <img src="{{items.product_detail.product_image}}">
                                 </div>
@@ -91,7 +91,7 @@
                                     <p>{{items.product_detail.product_fabric}}</p>
                                     <p>{{items.product_detail.product_category}}</p>
                                     <div
-                                        (click)="getproductDetail(items.Sub_Cat_Name,items.Type,items.id)">
+                                    (click)="navigatetoproductdetail(items.product_detail.id)">
                                         <strong>{{items.product_detail.product_price | currency}}</strong>
                                     </div>
                                 </div>

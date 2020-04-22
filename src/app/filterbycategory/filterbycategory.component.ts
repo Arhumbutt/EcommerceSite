@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { filterproductService } from "./filterproductservice";
 import { Router, ActivatedRoute } from '@angular/router';
+import { headerService } from "./../header/headerservice";
 declare var $: any;
 @Component({
   selector: 'app-filterbycategory',
@@ -17,7 +18,7 @@ export class FilterbycategoryComponent implements OnInit {
   cat
   minprice
   maxprice
-  constructor(private serv : filterproductService , private route:ActivatedRoute) { }
+  constructor(private serv : filterproductService ,private router:Router, private route:ActivatedRoute ,private serv1 :headerService,) { }
 
 
   grid(){
@@ -47,15 +48,33 @@ export class FilterbycategoryComponent implements OnInit {
       this.piece=params['param3']
       if(this.gender !='' || this.type !='' ||this.piece !='')
       {
-        this.filterproduct( this.piece ,this.cat,this.type ,  this.minprice ,this.maxprice,this.gender)
+        this.filterproduct( this.piece ,this.cat,this.type ,this.gender)
       }
     })
   }
-  filterproduct(piece , cat , febric  , minprice ,maxprice, checkgender)
+  filterproduct(piece , cat , febric , checkgender)
   {
-         this.serv.filterproduct(piece , cat , febric  , minprice ,maxprice, checkgender).subscribe(data=>{
+   
+         this.serv.filterproduct(piece , cat , febric  , this.minprice ,this.maxprice, checkgender).subscribe(data=>{
           this.filteredproduct=data
           console.log(data)
          })
   }
+  navigatetoproductdetail(id)
+  {
+   this.router.navigate(['/productdetail'], {
+     queryParams: {
+       product_id:id
+     }
+    })
+  }
+  AddtoCartList(id)
+  {
+
+    this.serv1.addtocartlist(id , 1).subscribe(data=>{
+     console.log(data)
+    })
+  }
+
+
 }

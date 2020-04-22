@@ -39,6 +39,15 @@ export class HeaderComponent implements OnInit {
       }
      })
    }
+   navigatetoproductdetail(id)
+   {
+     
+    this.router.navigate(['/productdetail'], {
+      queryParams: {
+        product_id:id
+      }
+     })
+   }
    
 
 

@@ -108,8 +108,8 @@
 </div>
 <div id="collapse5" class="collapse" aria-labelledby="headingCollapse5">
   
-    <label for="">Minimum<input type="text"></label> 
-    <label for="">Miximum<input type="text"></label>
+    <label for="">Minimum<input type="text" [(ngModel)]="minprice" (ngModelChange)="filterproduct()"></label> 
+    <label for="">Miximum<input type="text" [(ngModel)]="maxprice" (ngModelChange)="filterproduct()"></label>
 </div>
     </div>
     <div class="content-area">
@@ -143,18 +143,18 @@
           <div class="row">
             <div class="col-lg-4">
               <div class="g-view" *ngFor="let filter of filteredproduct.Result">
-                <div class="g-img">
+                <div class="g-img"  (click)="navigatetoproductdetail(filter.id)">
                   <img src="{{filter.product_image}}" alt="">
                 </div>
                 <div class="about-pro">
-                  <a href="#">{{filter.product_title}}</a>
+                  <a href="#" (click)="navigatetoproductdetail(filter.id)">{{filter.product_title}}</a>
                   <div class="btns">
-                    <button>ADD TO BAG</button>
-                    <div class="price">
+                    <button (click)="AddtoCartList(filter.id)">ADD TO BAG</button>
+                    <div class="price" (click)="navigatetoproductdetail(filter.id)">
                       <span class="new">PKR{{filter.product_price}}</span>
                       <!-- <span class="old">PKR2,490.00</span> -->
                     </div>
-                    <p class="dis">{{filter.product_fabric}}</p>
+                    <p class="dis" (click)="navigatetoproductdetail(filter.id)">{{filter.product_fabric}}</p>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { headerService } from "./../header/headerservice";
 
+import { Router, ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-watchlist',
   templateUrl: './watchlist.component.html',
@@ -8,10 +10,18 @@ import { headerService } from "./../header/headerservice";
 })
 export class WatchlistComponent implements OnInit {
   watchlistArray:any=[]
-  constructor(private serv:headerService) { }
+  constructor(private serv:headerService , private router : Router) { }
 
   ngOnInit() {
     this.GetWatchList()
+  }
+  navigatetoproductdetail(id)
+  {
+   this.router.navigate(['/productdetail'], {
+     queryParams: {
+       product_id:id
+     }
+    })
   }
   GetWatchList()
   {
